@@ -14,31 +14,34 @@ public class Controller {
         this.repository = repository;
     }
     public PrgState oneStep(PrgState state) throws ControllerException {
-        MyIStack<IStatement> stack = state.getExecStack();
-        if (stack.isEmpty()) {
-            throw new ControllerException("Stack is empty");
-        }
         try {
+            MyIStack<IStatement> stack = state.getExecStack();
             IStatement currentstatement = stack.pop();
             return currentstatement.execute(state);
         }
         catch (Exception e) {
-            System.out.println(e.getMessage());
+            throw new ControllerException(e.getMessage());
         }
-        return null;
     }
 
-    public void allStep(){
+    public void allStep(int dispFlag) throws ControllerException{
         try {
             PrgState prg = repository.getCurrentState();
             this.repository.logPrgStateExec();
             while (!prg.getExecStack().isEmpty()) {
                 this.oneStep(prg);
                 this.repository.logPrgStateExec();
+                if (dispFlag == 1) {
+                    System.out.println(prg.toString());
+                }
             }
         }
         catch(Exception e) {
-            System.out.println(e.getMessage());
+            throw new ControllerException(e.getMessage());
         }
+    }
+
+    public void addState(PrgState state){
+        this.repository.addState(state);
     }
 }

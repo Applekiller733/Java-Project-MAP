@@ -14,10 +14,12 @@ public class Repository implements MyIRepository{
     private List<PrgState> instances;
     private String logFilePath;
     private int currentProgState = 0;
-    public Repository() {
+    public Repository(String logFilePath) {
         instances = new ArrayList<PrgState>();
+        this.logFilePath = logFilePath;
     }
-    public Repository(List<PrgState> instances) {
+    public Repository(List<PrgState> instances, String logFilePath) {
+        this.logFilePath = logFilePath;
         this.instances = instances;
     }
     public List<PrgState> getInstances() {
