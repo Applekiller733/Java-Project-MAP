@@ -24,6 +24,10 @@ public class VarDeclStatement implements IStatement{
         return state;
     }
 
+    public String toString(){
+        return type + " " + varName;
+    }
+
     public IStatement deepCopy(){
         return new VarDeclStatement(varName, type);
     }

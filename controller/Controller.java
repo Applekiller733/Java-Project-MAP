@@ -24,16 +24,13 @@ public class Controller {
         }
     }
 
-    public void allStep(int dispFlag) throws ControllerException{
+    public void allStep() throws ControllerException{
         try {
             PrgState prg = repository.getCurrentState();
             this.repository.logPrgStateExec();
             while (!prg.getExecStack().isEmpty()) {
                 this.oneStep(prg);
                 this.repository.logPrgStateExec();
-                if (dispFlag == 1) {
-                    System.out.println(prg.toString());
-                }
             }
         }
         catch(Exception e) {

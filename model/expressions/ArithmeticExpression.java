@@ -23,6 +23,9 @@ public class ArithmeticExpression implements IExpression{
         IValue leftvalue = this.left.evaluate(symTbl);
         IValue rightvalue = this.right.evaluate(symTbl);
 
+        if (leftvalue == null || rightvalue == null){
+            throw new ExpressionException("Left and Right expressions cannot be null");
+        }
         if(!leftvalue.getType().equals(new IntType()) || !rightvalue.getType().equals(new IntType()))
         {
             throw new ExpressionException("Invalid expression\n");

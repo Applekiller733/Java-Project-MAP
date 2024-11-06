@@ -74,8 +74,10 @@ public class View {
                                                                     new ValueExpression(new IntValue(3)))),
                                                             new PrintStatement(new VariableExpression("v"))))));
                         }
-                        stack.push(ex);
+//                        stack.push(ex);
+//                        PrgState initstate = new PrgState(ex, stack, symtbl, outlist, filetbl);
                         PrgState initstate = new PrgState(ex, stack, symtbl, outlist, filetbl);
+//                        System.out.println(initstate.toString());
                         controller.addState(initstate);
                     }
                     else{
@@ -84,11 +86,11 @@ public class View {
                     break;
                 case 2:
                     try {
-                        controller.allStep(1);
+                        controller.allStep();
                     } catch (ControllerException e) {
                         System.out.println(e.getMessage());
                     }
-                    System.out.println("Program ran successfully!\n");
+//                    System.out.println("Program ran successfully!\n");
                     break;
                     case 9:
                         System.exit(0);

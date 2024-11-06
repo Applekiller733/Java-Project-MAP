@@ -11,7 +11,7 @@ public class RunExample extends Command {
 
     public void execute(){
         try{
-            cont.allStep(0);
+            cont.allStep();
         }
         catch(Exception e){
             System.out.println(e.getMessage());

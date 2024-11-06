@@ -40,7 +40,7 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
 
     @Override
     public V get(K key) throws ExpressionException {
-        if (this.map.containsKey(key)){
+        if (!this.map.containsKey(key)){
             throw new ExpressionException("Key not found in dictionary!\n");
         }
         return this.map.get(key);

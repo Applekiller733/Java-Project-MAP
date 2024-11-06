@@ -13,7 +13,7 @@ public class ValueExpression implements IExpression{
 
     @Override
     public IValue evaluate(MyIDictionary<String, IValue> symTbl) {
-        return null;
+        return value;
     }
 
     @Override
