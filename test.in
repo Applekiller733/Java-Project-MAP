@@ -1,0 +1,356 @@
+The stack contains:(StringType varf;(varf=src/text.txt;(model.statements.OpenFileStatement@1f17ae12;(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(model.statements.OpenFileStatement@1f17ae12;(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38)))))))
+StringType varf
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(model.statements.OpenFileStatement@1f17ae12;(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38)))))))
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(model.statements.OpenFileStatement@1f17ae12;(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38))))))
+varf=src/text.txt
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(model.statements.OpenFileStatement@1f17ae12;(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38))))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38)))))
+model.statements.OpenFileStatement@1f17ae12
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38)))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38))))
+int varc
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(model.statements.ReadFileStatement@4d405ef7;(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38))))
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);(model.statements.ReadFileStatement@6193b845;(print(varc);model.statements.CloseFileStatement@2e817b38)))
+model.statements.ReadFileStatement@4d405ef7
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(StringType varf;(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+StringType varf
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+varf=src/text.txt
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+open(varf)
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+int varc
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);(read(varf);(print(varc);close(varf))))
+read(varf)
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(StringType varf;(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+StringType varf
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.txt;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+varf=src/text.txt
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+open(varf)
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+int varc
+
+Dictionary contains: varf->src/text.txt
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);(read(varf);(print(varc);close(varf))))
+read(varf)
+
+Dictionary contains: varf->src/text.txt
+varc->0
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);(read(varf);(print(varc);close(varf))))
+
+Dictionary contains: varf->src/text.txt
+varc->15
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);close(varf)))
+print(varc)
+
+Dictionary contains: varf->src/text.txt
+varc->15
+
+The list contains: 
+File Table:
+src/text.txt
+
+
+The stack contains:(read(varf);(print(varc);close(varf)))
+
+Dictionary contains: varf->src/text.txt
+varc->15
+
+The list contains: 15
+
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);close(varf))
+read(varf)
+
+Dictionary contains: varf->src/text.txt
+varc->15
+
+The list contains: 15
+
+File Table:
+src/text.txt
+
+
+The stack contains:(print(varc);close(varf))
+
+Dictionary contains: varf->src/text.txt
+varc->50
+
+The list contains: 15
+
+File Table:
+src/text.txt
+
+
+The stack contains:close(varf)
+print(varc)
+
+Dictionary contains: varf->src/text.txt
+varc->50
+
+The list contains: 15
+
+File Table:
+src/text.txt
+
+
+The stack contains:close(varf)
+
+Dictionary contains: varf->src/text.txt
+varc->50
+
+The list contains: 15
+50
+
+File Table:
+src/text.txt
+
+
+The stack contains:
+Dictionary contains: varf->src/text.txt
+varc->50
+
+The list contains: 15
+50
+
+File Table:
+
+

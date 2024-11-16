@@ -13,7 +13,6 @@ public class VarDeclStatement implements IStatement{
     public VarDeclStatement(String varName, IType type){
         this.varName = varName;
         this.type = type;
-
     }
 
     public PrgState execute(PrgState state) throws StatementException {

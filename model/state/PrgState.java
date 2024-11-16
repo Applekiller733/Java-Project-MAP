@@ -11,12 +11,12 @@ import java.io.BufferedReader;
 public class PrgState {
     private MyIStack<IStatement> execStack;
     private MyIDictionary<String, IValue> symTable;
-    private MyIList<String> outputList;
+    private MyIList<IValue> outputList;
     private IStatement originalStatement;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
 
     public PrgState(IStatement initState, MyIStack<IStatement> execStack, MyIDictionary<String,
-            IValue> symTable, MyIList<String> outputList,
+            IValue> symTable, MyIList<IValue> outputList,
                     MyIDictionary<StringValue, BufferedReader> fileTable) {
         this.execStack = execStack;
         this.symTable = symTable;
@@ -35,7 +35,7 @@ public class PrgState {
         return symTable;
     }
 
-    public MyIList<String> getOutputList() {
+    public MyIList<IValue> getOutputList() {
         return outputList;
     }
 

@@ -1,0 +1,178 @@
+The stack contains:(StringType varf;(varf=src/text.in;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.in;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+StringType varf
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+
+The stack contains:(varf=src/text.in;(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))))
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+varf=src/text.in
+
+Dictionary contains: varf->
+
+The list contains: 
+File Table:
+
+
+The stack contains:(open(varf);(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))))
+
+Dictionary contains: varf->src/text.in
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+open(varf)
+
+Dictionary contains: varf->src/text.in
+
+The list contains: 
+File Table:
+
+
+The stack contains:(int varc;(read(varf);(print(varc);(read(varf);(print(varc);close(varf))))))
+
+Dictionary contains: varf->src/text.in
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+int varc
+
+Dictionary contains: varf->src/text.in
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(read(varf);(print(varc);(read(varf);(print(varc);close(varf)))))
+
+Dictionary contains: varf->src/text.in
+varc->0
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(print(varc);(read(varf);(print(varc);close(varf))))
+read(varf)
+
+Dictionary contains: varf->src/text.in
+varc->0
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(print(varc);(read(varf);(print(varc);close(varf))))
+
+Dictionary contains: varf->src/text.in
+varc->15
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(read(varf);(print(varc);close(varf)))
+print(varc)
+
+Dictionary contains: varf->src/text.in
+varc->15
+
+The list contains: 
+File Table:
+src/text.in
+
+
+The stack contains:(read(varf);(print(varc);close(varf)))
+
+Dictionary contains: varf->src/text.in
+varc->15
+
+The list contains: 15
+
+File Table:
+src/text.in
+
+
+The stack contains:(print(varc);close(varf))
+read(varf)
+
+Dictionary contains: varf->src/text.in
+varc->15
+
+The list contains: 15
+
+File Table:
+src/text.in
+
+
+The stack contains:(print(varc);close(varf))
+
+Dictionary contains: varf->src/text.in
+varc->50
+
+The list contains: 15
+
+File Table:
+src/text.in
+
+
+The stack contains:close(varf)
+print(varc)
+
+Dictionary contains: varf->src/text.in
+varc->50
+
+The list contains: 15
+
+File Table:
+src/text.in
+
+
+The stack contains:close(varf)
+
+Dictionary contains: varf->src/text.in
+varc->50
+
+The list contains: 15
+50
+
+File Table:
+src/text.in
+
+
+The stack contains:
+Dictionary contains: varf->src/text.in
+varc->50
+
+The list contains: 15
+50
+
+File Table:
+
+

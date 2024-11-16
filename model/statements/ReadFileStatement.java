@@ -5,6 +5,7 @@ import model.expressions.IExpression;
 import exceptions.ExpressionException;
 import exceptions.StatementException;
 import model.state.PrgState;
+import model.type.IType;
 import model.type.IntType;
 import model.type.StringType;
 import model.value.IValue;
@@ -26,7 +27,7 @@ public class ReadFileStatement implements IStatement {
         if (!state.getSymTable().contains(this.var_name)) {
             throw new StatementException("Variable '" + this.var_name + "' not defined");
         }
-        if (state.getSymTable().get(this.var_name).getType().equals(new IntType()) ) {
+        if (!state.getSymTable().get(this.var_name).getType().equals(new IntType()) ) {
             throw new StatementException("The variable is not an integer type");
         }
         IValue eval = this.expression.evaluate(state.getSymTable());
@@ -54,5 +55,10 @@ public class ReadFileStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new ReadFileStatement(expression.deepCopy(), var_name);
+    }
+
+    @Override
+    public String toString() {
+        return "read(" + expression.toString() + ")";
     }
 }

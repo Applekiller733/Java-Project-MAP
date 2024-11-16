@@ -15,7 +15,7 @@ public class PrintStatement implements IStatement{
     @Override
     public PrgState execute(PrgState state) throws ExpressionException {
         IValue val = expression.evaluate(state.getSymTable());
-        state.getOutputList().add(val.toString());
+        state.getOutputList().add(val);
         return state;
     }
 
