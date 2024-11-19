@@ -14,15 +14,17 @@ public class PrgState {
     private MyIList<IValue> outputList;
     private IStatement originalStatement;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
+    private IHeap heap;
 
     public PrgState(IStatement initState, MyIStack<IStatement> execStack, MyIDictionary<String,
             IValue> symTable, MyIList<IValue> outputList,
-                    MyIDictionary<StringValue, BufferedReader> fileTable) {
+                    MyIDictionary<StringValue, BufferedReader> fileTable,IHeap heap) {
         this.execStack = execStack;
         this.symTable = symTable;
         this.outputList = outputList;
         this.originalStatement = initState.deepCopy();
         this.fileTable = fileTable;
+        this.heap = heap;
 
         this.execStack.push(initState);
     }
@@ -43,11 +45,16 @@ public class PrgState {
         return fileTable;
     }
 
+    public IHeap getHeap(){
+        return heap;
+    }
+
     public String toString(){
         return execStack.toString() + "\n"
                 + symTable.toString() + "\n"
                 + outputList.toString() + "\n"
-                + this.toStringFile() + "\n";
+                + this.toStringFile() + "\n"
+                + this.heap.toString() + "\n";
     }
 
     //do the same for symTable, execStack, outputList to neatly print them as below
