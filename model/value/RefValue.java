@@ -32,7 +32,7 @@ public class RefValue implements IValue {
 
     @Override
     public String toString() {
-        return "RefValue [address=" + address + ", locationType=" + locationType + "]";
+        return "Ref(" + address + "," + locationType + ")";
     }
 }
 

@@ -27,7 +27,7 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
 
     @Override
     public void put(K key, V value) {
-
+        this.map.put(key, value);
     }
 
     @Override

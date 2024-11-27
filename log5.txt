@@ -1,0 +1,143 @@
+The stack contains:(Ref int v;(new(v,20);(Ref Ref int a;(new(a,v);(new(v,30);print(rH(rH(a))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(Ref Ref int a;(new(a,v);(new(v,30);print(rH(rH(a)))))))
+Ref int v
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(Ref Ref int a;(new(a,v);(new(v,30);print(rH(rH(a)))))))
+
+Dictionary contains: v->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(Ref Ref int a;(new(a,v);(new(v,30);print(rH(rH(a))))))
+new(v,20)
+
+Dictionary contains: v->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(Ref Ref int a;(new(a,v);(new(v,30);print(rH(rH(a))))))
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(new(a,v);(new(v,30);print(rH(rH(a)))))
+Ref Ref int a
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(new(a,v);(new(v,30);print(rH(rH(a)))))
+
+Dictionary contains: a->Ref(0,Ref int)
+v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(new(v,30);print(rH(rH(a))))
+new(a,v)
+
+Dictionary contains: a->Ref(0,Ref int)
+v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(new(v,30);print(rH(rH(a))))
+
+Dictionary contains: a->Ref(2,Ref int)
+v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+2-> Ref(1,int)
+
+
+The stack contains:print(rH(rH(a)))
+new(v,30)
+
+Dictionary contains: a->Ref(2,Ref int)
+v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+2-> Ref(1,int)
+
+
+The stack contains:print(rH(rH(a)))
+
+Dictionary contains: a->Ref(2,Ref int)
+v->Ref(3,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+2-> Ref(1,int)
+3-> 30
+
+
+The stack contains:
+Dictionary contains: a->Ref(2,Ref int)
+v->Ref(3,int)
+
+The list contains: 20
+
+File Table:
+
+Heap:
+1-> 20
+2-> Ref(1,int)
+3-> 30
+
+

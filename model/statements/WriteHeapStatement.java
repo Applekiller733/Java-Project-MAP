@@ -31,7 +31,7 @@ public class WriteHeapStatement implements IStatement {
         }
 
         IValue expeval = this.expression.evaluate(state.getSymTable(), state.getHeap());
-        if (!expeval.getType().equals(val.getType())){
+        if (!expeval.getType().equals((val.getLocationType()))){
             throw new ExpressionException("wHEAPSTMT:Type mismatch");
         }
         state.getHeap().set(val.getAddress(), expeval);

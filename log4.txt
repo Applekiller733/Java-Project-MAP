@@ -1,0 +1,112 @@
+The stack contains:(Ref int v;(new(v,20);(print(rH(v));(wH(v);print(rH(v) + 5)))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(print(rH(v));(wH(v);print(rH(v) + 5))))
+Ref int v
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(print(rH(v));(wH(v);print(rH(v) + 5))))
+
+Dictionary contains: v->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(print(rH(v));(wH(v);print(rH(v) + 5)))
+new(v,20)
+
+Dictionary contains: v->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(print(rH(v));(wH(v);print(rH(v) + 5)))
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(wH(v);print(rH(v) + 5))
+print(rH(v))
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:(wH(v);print(rH(v) + 5))
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 20
+
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:print(rH(v) + 5)
+wH(v)
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 20
+
+File Table:
+
+Heap:
+1-> 20
+
+
+The stack contains:print(rH(v) + 5)
+
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 20
+
+File Table:
+
+Heap:
+1-> 30
+
+
+The stack contains:
+Dictionary contains: v->Ref(1,int)
+
+The list contains: 20
+35
+
+File Table:
+
+Heap:
+1-> 30
+
+

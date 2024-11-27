@@ -54,7 +54,7 @@ public class Controller {
     public Map<Integer, IValue> safeGarbageCollector(List<Integer> activeAddresses,
                                                      Map<Integer, IValue> heap){
         return heap.entrySet().stream().filter( e -> activeAddresses.contains(e.getKey()))
-                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue()));
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 
     public List<Integer> getAllActiveAddresses(Collection<IValue> symTableValues, IHeap heap){
@@ -71,6 +71,8 @@ public class Controller {
                                     if (next instanceof RefValue){
                                         v = (RefValue) next;
                                     }
+                                    else
+                                        break;
                                 } catch (ExpressionException e) {
                                     throw new RuntimeException(e);
                                 }
