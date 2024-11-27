@@ -1,6 +1,7 @@
 package model.expressions;
 
 import exceptions.ExpressionException;
+import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.type.BoolType;
 import model.type.IntType;
@@ -21,12 +22,12 @@ public class RelationalExpression implements IExpression {
 
 
     @Override
-    public IValue evaluate(MyIDictionary<String, IValue> symTbl) throws ExpressionException {
-        if (!(this.left.evaluate(symTbl).getType().equals(new IntType())) || !(this.right.evaluate(symTbl).getType().equals(new IntType()))) {
-            throw new ExpressionException("Wrong type of expression");
+    public IValue evaluate(MyIDictionary<String, IValue> symTbl, IHeap heap) throws ExpressionException {
+        if (!(this.left.evaluate(symTbl, heap).getType().equals(new IntType())) || !(this.right.evaluate(symTbl, heap).getType().equals(new IntType()))) {
+            throw new ExpressionException("RELATIONEXP:Wrong type of expression");
         }
-        IntValue leftval = (IntValue) this.left.evaluate(symTbl);
-        IntValue rightval = (IntValue) this.right.evaluate(symTbl);
+        IntValue leftval = (IntValue) this.left.evaluate(symTbl, heap);
+        IntValue rightval = (IntValue) this.right.evaluate(symTbl, heap);
 
         BoolValue eval = new BoolValue(false);
         switch(this.operation){
@@ -56,5 +57,10 @@ public class RelationalExpression implements IExpression {
     @Override
     public IExpression deepCopy() {
         return new RelationalExpression(this.left.deepCopy(), this.operation, this.right.deepCopy());
+    }
+
+    @Override
+    public String toString(){
+        return this.left.toString() + " " + this.operation + " " + this.right.toString();
     }
 }

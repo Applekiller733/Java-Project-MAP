@@ -29,6 +29,11 @@ public class RefValue implements IValue {
     public boolean equals(IValue value) {
         return value.getType().equals(new RefType(locationType)) && ((RefValue) value).address == address;
     }
+
+    @Override
+    public String toString() {
+        return "RefValue [address=" + address + ", locationType=" + locationType + "]";
+    }
 }
 
 

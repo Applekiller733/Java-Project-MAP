@@ -2,6 +2,7 @@ package model.ADT;
 
 import exceptions.ExpressionException;
 
+import java.util.Collection;
 import java.util.Set;
 
 public interface MyIDictionary<K, V> {
@@ -11,5 +12,6 @@ public interface MyIDictionary<K, V> {
     boolean contains(K key);
     V get(K key) throws ExpressionException;
     String toString();
+    Collection<V> getContent();
     public Set<K> getKeys();
 }

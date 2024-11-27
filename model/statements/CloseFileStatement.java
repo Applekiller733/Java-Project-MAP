@@ -19,12 +19,12 @@ public class CloseFileStatement implements IStatement {
 
     @Override
     public PrgState execute(PrgState state) throws StatementException, ExpressionException {
-        if (!this.exp.evaluate(state.getSymTable()).getType().equals(new StringType())) {
-            throw new ExpressionException("The expression is not a string");
+        if (!this.exp.evaluate(state.getSymTable(), state.getHeap()).getType().equals(new StringType())) {
+            throw new ExpressionException("CLOSEFILESTMT:The expression is not a string");
         }
-        StringValue eval = (StringValue) this.exp.evaluate(state.getSymTable());
+        StringValue eval = (StringValue) this.exp.evaluate(state.getSymTable(), state.getHeap());
         if (!state.getFileTable().contains(eval)){
-            throw new StatementException("Filetable does not contain file");
+            throw new StatementException("CLOSEFILESTMT:Filetable does not contain file");
         }
         BufferedReader reader = state.getFileTable().get(eval);
         try {
@@ -32,7 +32,7 @@ public class CloseFileStatement implements IStatement {
             state.getFileTable().remove(eval);
         }
         catch (IOException e) {
-            throw new StatementException("Could not close file");
+            throw new StatementException("CLOSEFILESTMT:Could not close file");
         }
         return state;
     }

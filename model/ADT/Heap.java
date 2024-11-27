@@ -3,19 +3,23 @@ package model.ADT;
 import exceptions.ExpressionException;
 import model.value.IValue;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Heap implements IHeap{
 
-    private MyIDictionary<Integer,IValue> map;
+    private Map<Integer,IValue> map;
     private Integer freeLocation;
 
     public Heap(){
-        map = new MyDictionary<>();
+        map = new HashMap<>();
         freeLocation = 1;
     }
 
     @Override
     public Integer allocate(IValue name) {
-        map.insert(freeLocation++, name);
+        map.put(freeLocation, name);
+        freeLocation++;
         return freeLocation-1;
     }
 
@@ -26,7 +30,7 @@ public class Heap implements IHeap{
 
     @Override
     public boolean exists(Integer address) {
-        return map.contains(address);
+        return map.containsKey(address);
     }
 
     @Override
@@ -36,24 +40,32 @@ public class Heap implements IHeap{
 
     @Override
     public void set(Integer address, IValue value) {
-        map.insert(address,value);
+        if (!this.map.containsKey(address)) {
+            throw new RuntimeException("Map address not in heap!");
+        }
+        map.put(address,value);
     }
 
     @Override
-    public MyIDictionary getHeap() {
+    public void setContent(Map<Integer, IValue> content) {
+        this.map = content;
+    }
+
+    @Override
+    public Map<Integer, IValue> getContent() {
         return map;
     }
+
 
     public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append("Heap:\n");
-        map.getKeys().forEach(key-> {
-            try {
-                builder.append(key.toString() + "->" + map.get(key).toString());
-            } catch (ExpressionException e) {
-                builder.append("");
-            }
-        });
+//        map.keySet().forEach(key-> {
+//                builder.append(key.toString() + "->" + map.get(key).toString());
+//        });
+        for (Map.Entry<Integer, IValue> entry : map.entrySet()) {
+            builder.append(entry.getKey() + "-> " + entry.getValue() + "\n");
+        }
         return builder.toString();
     }
 }

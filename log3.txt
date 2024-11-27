@@ -1,0 +1,131 @@
+The stack contains:(Ref int v;(new(v,20);(Ref Ref int a;(new(a,v);(print(v);print(a))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(Ref Ref int a;(new(a,v);(print(v);print(a)))))
+Ref int v
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(v,20);(Ref Ref int a;(new(a,v);(print(v);print(a)))))
+
+Dictionary contains: v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(Ref Ref int a;(new(a,v);(print(v);print(a))))
+new(v,20)
+
+Dictionary contains: v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(Ref Ref int a;(new(a,v);(print(v);print(a))))
+
+Dictionary contains: v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(a,v);(print(v);print(a)))
+Ref Ref int a
+
+Dictionary contains: v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(new(a,v);(print(v);print(a)))
+
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(print(v);print(a))
+new(a,v)
+
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:(print(v);print(a))
+
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:print(a)
+print(v)
+
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+The stack contains:print(a)
+
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: RefValue [address=0, locationType=int]
+
+File Table:
+
+Heap:
+
+
+The stack contains:
+Dictionary contains: a->RefValue [address=0, locationType=Ref int]
+v->RefValue [address=0, locationType=int]
+
+The list contains: RefValue [address=0, locationType=int]
+RefValue [address=0, locationType=Ref int]
+
+File Table:
+
+Heap:
+
+

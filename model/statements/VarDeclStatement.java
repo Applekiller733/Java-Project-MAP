@@ -17,7 +17,7 @@ public class VarDeclStatement implements IStatement{
 
     public PrgState execute(PrgState state) throws StatementException {
         if ( state.getSymTable().contains(this.varName) ){
-            throw new StatementException("Variable with this name already exists!\n");
+            throw new StatementException("VARDECLSTMT:Variable with this name already exists!\n");
         }
         state.getSymTable().insert(this.varName, this.type.getDefaultValue());
         return state;

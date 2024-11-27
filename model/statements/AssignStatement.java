@@ -20,11 +20,11 @@ public class AssignStatement implements IStatement{
     }
     public PrgState execute(PrgState state) throws StatementException, ExpressionException {
         if (!state.getSymTable().contains(id)){
-            throw new StatementException("Variable wasn't declared previously!\n");
+            throw new StatementException("ASSIGNSTMT:Variable wasn't declared previously!\n");
         }
-        IValue val = expression.evaluate(state.getSymTable());
+        IValue val = expression.evaluate(state.getSymTable(), state.getHeap());
         if (!val.getType().equals(state.getSymTable().get(id).getType())){
-            throw new StatementException("Type mismatch!\n");
+            throw new StatementException("ASSIGNSTMT:Type mismatch!\n");
         }
         state.getSymTable().insert(id, val);
         return state;

@@ -3,10 +3,7 @@ package model.ADT;
 
 import exceptions.ExpressionException;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     private Map<K, V> map;
@@ -60,5 +57,10 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     @Override
     public Set<K> getKeys() {
         return this.map.keySet();
+    }
+
+    @Override
+    public Collection<V> getContent() {
+        return this.map.values();
     }
 }

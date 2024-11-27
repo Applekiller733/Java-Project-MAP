@@ -27,9 +27,9 @@ public class IfStatement implements IStatement {
     }
 
     public PrgState execute(PrgState state) throws StatementException, ExpressionException {
-        IValue val = this.expression.evaluate(state.getSymTable());
+        IValue val = this.expression.evaluate(state.getSymTable(), state.getHeap());
         if (!val.getType().equals(new BoolType())) {
-            throw new StatementException("The expression is not a bool type!\n");
+            throw new StatementException("IFSTMT:The expression is not a bool type!\n");
         }
         if (((BoolValue) val).getValue()) {
             state.getExecStack().push(this.thenStatement);

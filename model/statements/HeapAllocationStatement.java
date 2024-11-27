@@ -25,29 +25,34 @@ public class HeapAllocationStatement implements IStatement{
         var symTable = state.getSymTable();
         var heap = state.getHeap();
         if(!symTable.contains(variableName)){
-            throw new StatementException("There is no variable " + variableName + " in the sym table");
+            throw new StatementException("HEAPALLOCSTMT:There is no variable " + variableName + " in the sym table");
         }
 
         IValue variableValue = symTable.get(this.variableName);
 
-        if(!(variableValue.getType() instanceof RefType)){
-            throw new StatementException("Variable is not of Ref type");
+        if(!(variableValue.getType() instanceof RefType)) {
+            throw new StatementException("HEAPALLOCSTMT:Variable is not of Ref type");
         }
 
-        IValue value = expression.evaluate(symTable);
+        IValue value = expression.evaluate(symTable, heap);
 
-        if(!value.getType().equals( ((RefValue) variableValue).getType())){
-            throw new StatementException("The expression is a different type of the referenced type");
+        if(!value.getType().equals(((RefType)variableValue.getType()).getInner())){
+            throw new StatementException("HEAPALLOCSTMT:The expression is a different type of the referenced type");
         }
 
         int address = heap.allocate(value);
-
-        symTable.put(variableName,new RefValue(address,((RefValue) variableValue).getLocationType()));
+//        System.out.println("Allocated value:" + value.toString() + " to address:" + address);
+        symTable.put(variableName,new RefValue(address, value.getType()));
         return state;
     }
 
     @Override
     public IStatement deepCopy() {
         return new HeapAllocationStatement(this.variableName,this.expression);
+    }
+
+    @Override
+    public String toString(){
+        return "new(" + this.variableName + "," + this.expression + ")";
     }
 }

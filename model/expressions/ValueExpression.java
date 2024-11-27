@@ -1,5 +1,6 @@
 package model.expressions;
 
+import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.state.PrgState;
 import model.value.IValue;
@@ -12,7 +13,7 @@ public class ValueExpression implements IExpression{
     }
 
     @Override
-    public IValue evaluate(MyIDictionary<String, IValue> symTbl) {
+    public IValue evaluate(MyIDictionary<String, IValue> symTbl, IHeap heap) {
         return value;
     }
 

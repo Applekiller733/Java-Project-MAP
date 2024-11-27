@@ -1,5 +1,6 @@
 package model.expressions;
 import exceptions.ExpressionException;
+import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.expressions.LogicalOperation;
 import model.type.BoolType;
@@ -22,11 +23,11 @@ public class LogicalExpression implements IExpression {
     }
 
     @Override
-    public IValue evaluate(MyIDictionary<String, IValue> symTbl) throws ExpressionException {
-        IValue left = this.left.evaluate(symTbl);
-        IValue right = this.right.evaluate(symTbl);
+    public IValue evaluate(MyIDictionary<String, IValue> symTbl, IHeap heap) throws ExpressionException {
+        IValue left = this.left.evaluate(symTbl, heap);
+        IValue right = this.right.evaluate(symTbl, heap);
         if (!(left.getType().equals(new BoolType()) && right.getType().equals(new BoolType()))) {
-            throw new ExpressionException("One of the values is not boolean!\n");
+            throw new ExpressionException("LOGICALEXP:One of the values is not boolean!\n");
         }
         Boolean leftvalue = ((BoolValue)left).getValue();
         Boolean rightvalue = ((BoolValue)right).getValue();

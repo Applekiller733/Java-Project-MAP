@@ -1,6 +1,7 @@
 package model.expressions;
 
 import exceptions.ExpressionException;
+import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.type.IntType;
 import model.value.IValue;
@@ -19,16 +20,16 @@ public class ArithmeticExpression implements IExpression{
     }
 
     @Override
-    public IValue evaluate(MyIDictionary<String, IValue> symTbl) throws ExpressionException {
-        IValue leftvalue = this.left.evaluate(symTbl);
-        IValue rightvalue = this.right.evaluate(symTbl);
+    public IValue evaluate(MyIDictionary<String, IValue> symTbl, IHeap heap) throws ExpressionException {
+        IValue leftvalue = this.left.evaluate(symTbl, heap);
+        IValue rightvalue = this.right.evaluate(symTbl, heap);
 
         if (leftvalue == null || rightvalue == null){
-            throw new ExpressionException("Left and Right expressions cannot be null");
+            throw new ExpressionException("ARITHEXP:Left and Right expressions cannot be null");
         }
         if(!leftvalue.getType().equals(new IntType()) || !rightvalue.getType().equals(new IntType()))
         {
-            throw new ExpressionException("Invalid expression\n");
+            throw new ExpressionException("ARITHEXP:Invalid expression\n");
         }
 
         int intleftvalue = ((IntValue) leftvalue).getValue();
@@ -46,12 +47,12 @@ public class ArithmeticExpression implements IExpression{
             }
             case DIVIDE -> {
                 if (intrightvalue == 0){
-                    throw new ExpressionException("Division by zero\n");
+                    throw new ExpressionException("ARITHEXP:Division by zero\n");
                 }
                 return new IntValue(intleftvalue / intrightvalue);
             }
             default -> {
-                throw new ExpressionException("Unknown operation type\n");
+                throw new ExpressionException("ARITHEXP:Unknown operation type\n");
             }
         }
     }
