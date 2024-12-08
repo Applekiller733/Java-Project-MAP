@@ -20,7 +20,7 @@ public class VarDeclStatement implements IStatement{
             throw new StatementException("VARDECLSTMT:Variable with this name already exists!\n");
         }
         state.getSymTable().insert(this.varName, this.type.getDefaultValue());
-        return state;
+        return null;
     }
 
     public String toString(){

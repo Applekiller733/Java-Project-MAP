@@ -25,24 +25,48 @@ public class Repository implements MyIRepository{
     public List<PrgState> getInstances() {
         return instances;
     }
-    public PrgState getCurrentState() throws RepositoryException {
-        if (instances.isEmpty()) {
-            throw new RepositoryException("There is no current state\n");
-        }
-        return instances.get(currentProgState);
-    }
+//    public PrgState getCurrentState() throws RepositoryException {
+//        if (instances.isEmpty()) {
+//            throw new RepositoryException("There is no current state\n");
+//        }
+//        return instances.get(currentProgState);
+//    }
     public void addState(PrgState state){
         instances.add(currentProgState, state);
+        currentProgState++;
     }
 
-    public void logPrgStateExec() throws RepositoryException{
+    @Override
+    public void logPrgStateExec(PrgState state) throws RepositoryException {
         try{
-        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
-        pw.println(this.getCurrentState());
-        pw.close();
+            PrintWriter pw = new PrintWriter(new BufferedWriter(
+                    new FileWriter(logFilePath, true)));
+            pw.println(state.toString());
+            pw.close();
         }
-        catch(IOException e){
+        catch (IOException e){
             throw new RepositoryException(e.getMessage());
         }
     }
+
+    @Override
+    public List<PrgState> getPrgStates() throws RepositoryException {
+        return instances;
+    }
+
+    @Override
+    public void setPrgList(List<PrgState> prgStates) {
+        this.instances = prgStates;
+    }
+
+//    public void logPrgStateExec() throws RepositoryException{
+//        try{
+//        PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath,true)));
+//        pw.println(this.getCurrentState());
+//        pw.close();
+//        }
+//        catch(IOException e){
+//            throw new RepositoryException(e.getMessage());
+//        }
+//    }
 }

@@ -34,7 +34,7 @@ public class CloseFileStatement implements IStatement {
         catch (IOException e) {
             throw new StatementException("CLOSEFILESTMT:Could not close file");
         }
-        return state;
+        return null;
     }
 
     @Override

@@ -49,7 +49,7 @@ public class ReadFileStatement implements IStatement {
         catch (IOException e) {
             throw new StatementException("READFILESTMT:Error reading file");
         }
-        return state;
+        return null;
     }
 
     @Override

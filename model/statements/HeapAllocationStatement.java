@@ -70,7 +70,7 @@ public class HeapAllocationStatement implements IStatement{
 //        System.out.println("Allocated value:" + value.toString() + " to address:" + address);
         symTable.insert(variableName,new RefValue(address, value.getType()));
 //        System.out.println("After symtable insert");
-        return state;
+        return null;
     }
 
     @Override

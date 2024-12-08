@@ -63,4 +63,13 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     public Collection<V> getContent() {
         return this.map.values();
     }
+
+    @Override
+    public MyIDictionary<K, V> deepCopy(){
+        MyIDictionary<K, V> newdict = new MyDictionary<>();
+        for (K key : this.map.keySet()){
+            newdict.put(key, this.map.get(key));
+        }
+        return newdict;
+    }
 }

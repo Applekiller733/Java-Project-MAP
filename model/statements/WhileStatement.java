@@ -29,7 +29,7 @@ public class WhileStatement implements IStatement {
             state.getExecStack().push(this);
             state.getExecStack().push(this.body);
         }
-        return state;
+        return null;
     }
 
     @Override

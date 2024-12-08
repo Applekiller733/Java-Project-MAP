@@ -33,7 +33,7 @@ public class OpenFileStatement implements IStatement{
         } catch (Exception e) {
             throw new ExpressionException("OPENFILESTMT:File not found");
         }
-        return state;
+        return null;
     }
 
     @Override

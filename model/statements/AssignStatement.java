@@ -27,7 +27,7 @@ public class AssignStatement implements IStatement{
             throw new StatementException("ASSIGNSTMT:Type mismatch!\n");
         }
         state.getSymTable().insert(id, val);
-        return state;
+        return null;
     }
 
     public IStatement deepCopy(){

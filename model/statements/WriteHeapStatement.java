@@ -35,7 +35,7 @@ public class WriteHeapStatement implements IStatement {
             throw new ExpressionException("wHEAPSTMT:Type mismatch");
         }
         state.getHeap().set(val.getAddress(), expeval);
-        return state;
+        return null;
     }
 
     @Override

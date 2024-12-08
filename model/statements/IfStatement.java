@@ -35,7 +35,7 @@ public class IfStatement implements IStatement {
             state.getExecStack().push(this.thenStatement);
         } else
             state.getExecStack().push(this.elseStatement);
-        return state;
+        return null;
     }
 
     public IStatement deepCopy(){

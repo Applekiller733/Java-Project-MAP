@@ -12,39 +12,85 @@ import model.value.RefValue;
 import repository.MyIRepository;
 import repository.Repository;
 
+import javax.naming.ldap.Control;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 public class Controller {
     private MyIRepository repository;
+    private ExecutorService executor;
+
     public Controller(MyIRepository repository) {
         this.repository = repository;
     }
-    public PrgState oneStep(PrgState state) throws ControllerException {
+
+    public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
+        return inPrgList.stream()
+                .filter(p -> p.isNotCompleted())
+                .collect(Collectors.toList());
+    }
+
+    public void oneStepForAllPrg(List<PrgState> prgList) {
+        prgList.forEach(prgState -> {
+            try {
+                repository.logPrgStateExec(prgState);
+            } catch (RepositoryException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        List<Callable<PrgState>> callList = prgList.stream().map(p -> (Callable<PrgState>)() -> p.oneStep())
+                .collect(Collectors.toList());
         try {
-            MyIStack<IStatement> stack = state.getExecStack();
-            IStatement currentstatement = stack.pop();
-            return currentstatement.execute(state);
+            List<PrgState> newPrgList = executor.invokeAll(callList).stream()
+                    .map(future -> {
+                        try {
+                            return future.get();
+                        } catch (Exception e) {
+                            throw new RuntimeException(e);
+                        }
+                    }).filter(p -> p != null).collect(Collectors.toList());
+
+            prgList.addAll(newPrgList);
+
+            prgList.forEach(prgState -> {
+                try {
+                    repository.logPrgStateExec(prgState);
+                } catch (RepositoryException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            repository.setPrgList(prgList);
         }
-        catch (Exception e) {
-            throw new ControllerException(e.getMessage());
+        catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 
+
     public void allStep() throws ControllerException{
         try {
-            PrgState prg = repository.getCurrentState();
-            this.repository.logPrgStateExec();
-            while (!prg.getExecStack().isEmpty()) {
-                this.oneStep(prg);
-//                this.repository.logPrgStateExec();
-                prg.getHeap().setContent(safeGarbageCollector(this.getAllActiveAddresses(prg.getSymTable().getContent(),
-                                                                    prg.getHeap()), prg.getHeap().getContent()));
-                this.repository.logPrgStateExec();
+            executor = Executors.newFixedThreadPool(2);
+            List<PrgState> prgList = this.removeCompletedPrg(repository.getPrgStates());
+
+            while (prgList.size() > 0){
+                prgList.forEach(prgState -> {
+                    prgState.getHeap().setContent(safeGarbageCollector(
+                            this.getAllActiveAddresses(prgState.getSymTable().getContent(),
+                            prgState.getHeap()), prgState.getHeap().getContent()));
+                });
+                oneStepForAllPrg(prgList);
+                prgList = this.removeCompletedPrg(repository.getPrgStates());
             }
+            executor.shutdownNow();
+            repository.setPrgList(prgList);
         }
         catch(Exception e) {
             throw new ControllerException(e.getMessage());

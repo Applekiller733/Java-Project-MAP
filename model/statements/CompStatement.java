@@ -19,7 +19,7 @@ public class CompStatement implements IStatement{
     public PrgState execute(PrgState state) {
         state.getExecStack().push(this.second);
         state.getExecStack().push(this.first);
-        return state;
+        return null;
     }
 
     public IStatement deepCopy(){

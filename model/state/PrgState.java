@@ -1,5 +1,6 @@
 package model.state;
 
+import exceptions.ControllerException;
 import model.ADT.*;
 import model.expressions.IExpression;
 import model.statements.IStatement;
@@ -15,6 +16,8 @@ public class PrgState {
     private IStatement originalStatement;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
     private IHeap heap;
+    static int nextId = 0;
+    private int id;
 
     public PrgState(IStatement initState, MyIStack<IStatement> execStack, MyIDictionary<String,
             IValue> symTable, MyIList<IValue> outputList,
@@ -25,6 +28,7 @@ public class PrgState {
         this.originalStatement = initState.deepCopy();
         this.fileTable = fileTable;
         this.heap = heap;
+        this.id = this.getNextId();
 
         this.execStack.push(initState);
     }
@@ -49,8 +53,28 @@ public class PrgState {
         return heap;
     }
 
+    public Boolean isNotCompleted(){
+        return (!this.getExecStack().isEmpty());
+    }
+
+    public synchronized int getNextId(){
+        return nextId++;
+    }
+
+    public PrgState oneStep() throws ControllerException {
+        try {
+            MyIStack<IStatement> stack = this.getExecStack();
+            IStatement currentstatement = stack.pop();
+            return currentstatement.execute(this);
+        }
+        catch (Exception e) {
+            throw new ControllerException(e.getMessage());
+        }
+    }
+
     public String toString(){
-        return execStack.toString() + "\n"
+        return id + " - thread id\n" +
+                execStack.toString() + "\n"
                 + symTable.toString() + "\n"
                 + outputList.toString() + "\n"
                 + this.toStringFile() + "\n"

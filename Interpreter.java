@@ -188,6 +188,8 @@ public class Interpreter{
         repo6.addState(crtPrgState6);
         Controller ctrl6 = new Controller(repo6);
 
+
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
         menu.addCommand(new RunExample("1", ex1.toString(),ctr1));
