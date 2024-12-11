@@ -188,7 +188,36 @@ public class Interpreter{
         repo6.addState(crtPrgState6);
         Controller ctrl6 = new Controller(repo6);
 
+        IStatement ex7= new CompStatement(new VarDeclStatement("v", new IntType()),
+                new CompStatement(new VarDeclStatement("a", new RefType(new IntType())),
+                        new CompStatement(new AssignStatement("v", new ValueExpression(new IntValue(10))),
+                                new CompStatement(new HeapAllocationStatement("a",new ValueExpression(new IntValue(22))),
+                                        new CompStatement(
+                                                new ForkStatement(
+                                                        new CompStatement(new WriteHeapStatement("a",new ValueExpression(new IntValue(30))),
+                                                                new CompStatement(new AssignStatement("v", new ValueExpression(new IntValue(32))),
+                                                                        new CompStatement(
+                                                                                new PrintStatement(new VariableExpression("v")),
+                                                                                new PrintStatement(new ReadHeapExpression
+                                                                                        (new VariableExpression("a")))
+                                                                        )
+                                                                )
 
+                                                        )),
+                                                new CompStatement(
+                                                        new PrintStatement(new VariableExpression("v")),
+                                                        new PrintStatement(new ReadHeapExpression(new VariableExpression("a"))))
+                                        )
+                                )
+                        )
+                )
+        );
+        PrgState crtPrgState7 = new PrgState(ex7, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
+//        List<PrgState> list9 = new ArrayList<>();
+//        list9.add(crtPrgState9);
+        MyIRepository repo7 = new Repository("src/log7.txt");
+        repo7.addState(crtPrgState7);
+        Controller ctrl7 = new Controller(repo7);
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0", "exit"));
@@ -198,6 +227,7 @@ public class Interpreter{
         menu.addCommand(new RunExample("4", ex4.toString(), ctrl4));
         menu.addCommand(new RunExample("5", ex5.toString(), ctrl5));
         menu.addCommand(new RunExample("6", ex6.toString(), ctrl6));
+        menu.addCommand(new RunExample("7", ex7.toString(), ctrl7));
 
         menu.show();
     }

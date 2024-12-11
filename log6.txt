@@ -1,3 +1,4 @@
+5 - thread id
 The stack contains:(int v;(v=4;(while(v GREATER 0, (print(v);v=v - 1));print(v))))
 
 Dictionary contains: 
@@ -7,6 +8,7 @@ File Table:
 Heap:
 
 
+5 - thread id
 The stack contains:(v=4;(while(v GREATER 0, (print(v);v=v - 1));print(v)))
 int v
 
@@ -17,6 +19,18 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:(v=4;(while(v GREATER 0, (print(v);v=v - 1));print(v)))
+int v
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:(v=4;(while(v GREATER 0, (print(v);v=v - 1));print(v)))
 
 Dictionary contains: v->0
@@ -27,6 +41,18 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:(v=4;(while(v GREATER 0, (print(v);v=v - 1));print(v)))
+
+Dictionary contains: v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:(while(v GREATER 0, (print(v);v=v - 1));print(v))
 v=4
 
@@ -38,6 +64,19 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:(while(v GREATER 0, (print(v);v=v - 1));print(v))
+v=4
+
+Dictionary contains: v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:(while(v GREATER 0, (print(v);v=v - 1));print(v))
 
 Dictionary contains: v->4
@@ -48,6 +87,18 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:(while(v GREATER 0, (print(v);v=v - 1));print(v))
+
+Dictionary contains: v->4
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 
@@ -59,6 +110,19 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+
+Dictionary contains: v->4
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 (print(v);v=v - 1)
@@ -71,6 +135,20 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+(print(v);v=v - 1)
+
+Dictionary contains: v->4
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -84,6 +162,21 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+print(v)
+
+Dictionary contains: v->4
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -97,6 +190,21 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+
+Dictionary contains: v->4
+
+The list contains: 4
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 
@@ -109,6 +217,20 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+
+Dictionary contains: v->3
+
+The list contains: 4
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 (print(v);v=v - 1)
@@ -122,6 +244,21 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+(print(v);v=v - 1)
+
+Dictionary contains: v->3
+
+The list contains: 4
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -136,6 +273,22 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+print(v)
+
+Dictionary contains: v->3
+
+The list contains: 4
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -150,6 +303,22 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+
+Dictionary contains: v->3
+
+The list contains: 4
+3
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 
@@ -163,6 +332,21 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+
+Dictionary contains: v->2
+
+The list contains: 4
+3
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 (print(v);v=v - 1)
@@ -177,6 +361,22 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+(print(v);v=v - 1)
+
+Dictionary contains: v->2
+
+The list contains: 4
+3
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -192,6 +392,23 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+print(v)
+
+Dictionary contains: v->2
+
+The list contains: 4
+3
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -207,6 +424,23 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+
+Dictionary contains: v->2
+
+The list contains: 4
+3
+2
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 
@@ -221,6 +455,22 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+
+Dictionary contains: v->1
+
+The list contains: 4
+3
+2
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 (print(v);v=v - 1)
@@ -236,6 +486,23 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+(print(v);v=v - 1)
+
+Dictionary contains: v->1
+
+The list contains: 4
+3
+2
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -252,6 +519,24 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+print(v)
+
+Dictionary contains: v->1
+
+The list contains: 4
+3
+2
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 v=v - 1
@@ -268,6 +553,24 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+v=v - 1
+
+Dictionary contains: v->1
+
+The list contains: 4
+3
+2
+1
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 while(v GREATER 0, (print(v);v=v - 1))
 
@@ -283,6 +586,23 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+while(v GREATER 0, (print(v);v=v - 1))
+
+Dictionary contains: v->0
+
+The list contains: 4
+3
+2
+1
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:print(v)
 
 Dictionary contains: v->0
@@ -297,6 +617,22 @@ File Table:
 Heap:
 
 
+5 - thread id
+The stack contains:print(v)
+
+Dictionary contains: v->0
+
+The list contains: 4
+3
+2
+1
+
+File Table:
+
+Heap:
+
+
+5 - thread id
 The stack contains:
 Dictionary contains: v->0
 
