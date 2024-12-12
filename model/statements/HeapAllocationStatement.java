@@ -2,7 +2,9 @@ package model.statements;
 
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.state.PrgState;
+import model.type.IType;
 import model.type.RefType;
 import model.value.IValue;
 
@@ -76,6 +78,17 @@ public class HeapAllocationStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new HeapAllocationStatement(this.variableName,this.expression);
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typevar = typeEnv.get(this.variableName);
+        IType typeexp = expression.typecheck(typeEnv);
+        if (typevar.equals(new RefType(typeexp))){
+            return typeEnv;
+        }
+        else
+            throw new StatementException("HEAPALLOCSTMT: Left hand side and right hand side not of matching type!");
     }
 
     @Override

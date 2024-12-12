@@ -1,8 +1,10 @@
 package model.statements;
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.expressions.IExpression;
 import model.state.PrgState;
+import model.type.IType;
 import model.type.StringType;
 import model.value.IValue;
 import model.value.StringValue;
@@ -39,6 +41,17 @@ public class OpenFileStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new OpenFileStatement(this.exp.deepCopy());
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        //todo implement
+        IType typeexp = exp.typecheck(typeEnv);
+        if (typeexp.equals(new StringType())){
+            return typeEnv;
+        }
+        else
+            throw new StatementException("OPENFILESTMT:Expression does not evaluate to a string");
     }
 
     @Override

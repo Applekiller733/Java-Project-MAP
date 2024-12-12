@@ -2,8 +2,10 @@ package model.statements;
 
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.state.PrgState;
 import model.expressions.IExpression;
+import model.type.IType;
 import model.type.RefType;
 import model.value.IValue;
 import model.value.RefValue;
@@ -41,6 +43,17 @@ public class WriteHeapStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typevar = typeEnv.get(varname);
+        IType typeexp = expression.typecheck(typeEnv);
+        if (typevar.equals(new RefType(typeexp))){
+            return typeEnv;
+        }
+        else
+            throw new StatementException("wHEAPSTMT:Type mismatch");
     }
 
     @Override

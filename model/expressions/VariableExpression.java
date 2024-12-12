@@ -3,6 +3,7 @@ package model.expressions;
 import exceptions.ExpressionException;
 import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
+import model.type.IType;
 import model.value.IValue;
 
 public class VariableExpression implements IExpression{
@@ -25,5 +26,10 @@ public class VariableExpression implements IExpression{
 
     public IExpression deepCopy(){
         return new VariableExpression(variable);
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws ExpressionException {
+        return typeEnv.get(this.variable);
     }
 }

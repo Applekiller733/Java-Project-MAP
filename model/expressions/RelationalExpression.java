@@ -4,6 +4,7 @@ import exceptions.ExpressionException;
 import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.type.BoolType;
+import model.type.IType;
 import model.type.IntType;
 import model.value.BoolValue;
 import model.value.IValue;
@@ -57,6 +58,22 @@ public class RelationalExpression implements IExpression {
     @Override
     public IExpression deepCopy() {
         return new RelationalExpression(this.left.deepCopy(), this.operation, this.right.deepCopy());
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws ExpressionException {
+        IType type1, type2;
+        type1 = this.left.typecheck(typeEnv);
+        type2 = this.right.typecheck(typeEnv);
+        if (type1.equals(new IntType())){
+            if(type2.equals(new IntType())){
+                return new IntType();
+            }
+            else
+                throw new ExpressionException("RELATIONEXP:Second operand not int type!");
+        }
+        else
+            throw new ExpressionException("RELATIONEXP:First operand not int type!");
     }
 
     @Override

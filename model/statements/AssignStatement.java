@@ -2,8 +2,10 @@ package model.statements;
 
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.state.PrgState;
 import model.expressions.IExpression;
+import model.type.IType;
 import model.value.IValue;
 
 public class AssignStatement implements IStatement{
@@ -32,5 +34,16 @@ public class AssignStatement implements IStatement{
 
     public IStatement deepCopy(){
         return new AssignStatement(this.id, this.expression.deepCopy());
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typevar = typeEnv.get(id);
+        IType typeexp = expression.typecheck(typeEnv);
+        if (typevar.equals(typeexp)){
+            return typeEnv;
+        }
+        else
+            throw new StatementException("ASSIGNSTMT:left side and right side have different types!\n");
     }
 }

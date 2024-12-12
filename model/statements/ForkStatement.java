@@ -4,6 +4,7 @@ import exceptions.ExpressionException;
 import exceptions.StatementException;
 import model.ADT.*;
 import model.state.PrgState;
+import model.type.IType;
 import model.value.IValue;
 import model.value.StringValue;
 
@@ -41,5 +42,11 @@ public class ForkStatement implements IStatement{
     @Override
     public IStatement deepCopy() {
         return new ForkStatement(statement.deepCopy());
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        statement.typecheck(typeEnv);
+        return typeEnv;
     }
 }

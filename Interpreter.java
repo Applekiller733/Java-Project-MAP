@@ -3,6 +3,7 @@ import model.ADT.*;
 import model.expressions.*;
 import model.state.PrgState;
 import model.statements.*;
+import model.type.BoolType;
 import model.type.IntType;
 import model.type.RefType;
 import model.type.StringType;
@@ -47,15 +48,27 @@ import java.util.ArrayList;
 
 public class Interpreter{
     public static void main(String[] args) {
+
+
+        TextMenu menu = new TextMenu();
+        menu.addCommand(new ExitCommand("0", "exit"));
+
         IStatement ex1 = new CompStatement(new VarDeclStatement("v",new IntType()),
                 new CompStatement(new AssignStatement("v",new ValueExpression(new IntValue(2))),
                         new PrintStatement(new VariableExpression("v"))));
+        try {
+            ex1.typecheck(new MyDictionary<>());
 
-        PrgState state1 = new PrgState(ex1, new MyStack<IStatement>(), new MyDictionary<String, IValue>(),
-                new MyList<IValue>(), new MyDictionary<StringValue, BufferedReader>(), new Heap());
-        MyIRepository repo1 = new Repository( "log1.txt");
-        repo1.addState(state1);
-        Controller ctr1 = new Controller(repo1);
+            PrgState state1 = new PrgState(ex1, new MyStack<IStatement>(), new MyDictionary<String, IValue>(),
+                    new MyList<IValue>(), new MyDictionary<StringValue, BufferedReader>(), new Heap());
+            MyIRepository repo1 = new Repository("log1.txt");
+            repo1.addState(state1);
+            Controller ctr1 = new Controller(repo1);
+            menu.addCommand(new RunExample("1", ex1.toString(),ctr1));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
         IStatement test = new CompStatement(
                 new VarDeclStatement("varf", new StringType()),
@@ -68,15 +81,25 @@ public class Interpreter{
                                                         new CompStatement(new ReadFileStatement(new VariableExpression("varf"), "varc"),
                                                                 new CompStatement(new PrintStatement(new VariableExpression("varc")),
                                                                         new CloseFileStatement(new VariableExpression("varf"))))))))));
-        MyIStack<IStatement> st = new MyStack<IStatement>();
-        MyIDictionary<String, IValue> sTable= new MyDictionary<String, IValue>();
-        MyIList<IValue> o= new MyList<IValue>();
-        MyIDictionary<StringValue, BufferedReader> f= new MyDictionary<>();
-        IHeap heap = new Heap();
-        PrgState p= new PrgState(test,st,sTable, o, f, heap);
-        MyIRepository r= new Repository("src/logFile.txt");
-        r.addState(p);
-        Controller ctrfiletest= new Controller(r);
+
+        try {
+            test.typecheck(new MyDictionary<>());
+
+            MyIStack<IStatement> st = new MyStack<IStatement>();
+            MyIDictionary<String, IValue> sTable = new MyDictionary<String, IValue>();
+            MyIList<IValue> o = new MyList<IValue>();
+            MyIDictionary<StringValue, BufferedReader> f = new MyDictionary<>();
+            IHeap heap = new Heap();
+            PrgState p = new PrgState(test, st, sTable, o, f, heap);
+            MyIRepository r = new Repository("src/logFile.txt");
+            r.addState(p);
+            Controller ctrfiletest = new Controller(r);
+
+            menu.addCommand(new RunExample("2", test.toString(), ctrfiletest));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
 
         IStatement ex3 = new CompStatement(
@@ -95,13 +118,21 @@ public class Interpreter{
                         )
                 )
         );
-        PrgState crtPrgState3 = new PrgState(ex3, new MyStack<>(), new MyDictionary<>(), new MyList<>(),new MyDictionary<>(), new Heap());
+        try {
+            ex3.typecheck(new MyDictionary<>());
+
+            PrgState crtPrgState3 = new PrgState(ex3, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
 //        List<PrgState> list6 = new ArrayList<>();
 //        list6.add(crtPrgState6);
-        MyIRepository repo3 = new Repository("src/log3.txt");
-        repo3.addState(crtPrgState3);
-        Controller ctrl3 = new Controller(repo3);
+            MyIRepository repo3 = new Repository("src/log3.txt");
+            repo3.addState(crtPrgState3);
+            Controller ctrl3 = new Controller(repo3);
 
+            menu.addCommand(new RunExample("3", ex3.toString(), ctrl3));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         IStatement ex4 = new CompStatement(
                 new VarDeclStatement("v", new RefType(new IntType())),
                 new CompStatement(
@@ -121,12 +152,20 @@ public class Interpreter{
                         )
                 )
         );
-        PrgState crtPrgState4 = new PrgState(ex4, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
+        try {
+            ex4.typecheck(new MyDictionary<>());
+
+            PrgState crtPrgState4 = new PrgState(ex4, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
 //        List<PrgState> list7 = new ArrayList<>();
 //        list7.add(crtPrgState7);
-        MyIRepository repo4 = new Repository( "src/log4.txt");
-        repo4.addState(crtPrgState4);
-        Controller ctrl4 = new Controller(repo4);
+            MyIRepository repo4 = new Repository("src/log4.txt");
+            repo4.addState(crtPrgState4);
+            Controller ctrl4 = new Controller(repo4);
+            menu.addCommand(new RunExample("4", ex4.toString(), ctrl4));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
         IStatement ex5 = new CompStatement(
                 new VarDeclStatement("v", new RefType(new IntType())),
@@ -148,13 +187,19 @@ public class Interpreter{
                         )
                 )
         );
-        PrgState crtPrgState5 = new PrgState(ex5, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
+        try {
+            ex5.typecheck(new MyDictionary<>());
+            PrgState crtPrgState5 = new PrgState(ex5, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
 //        List<PrgState> list8 = new ArrayList<>();
 //        list8.add(crtPrgState8);
-        MyIRepository repo5 = new Repository("src/log5.txt");
-        repo5.addState(crtPrgState5);
-        Controller ctrl5 = new Controller(repo5);
-
+            MyIRepository repo5 = new Repository("src/log5.txt");
+            repo5.addState(crtPrgState5);
+            Controller ctrl5 = new Controller(repo5);
+            menu.addCommand(new RunExample("5", ex5.toString(), ctrl5));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
         IStatement ex6 = new CompStatement(
                 new VarDeclStatement("v", new IntType()),
                 new CompStatement(
@@ -181,12 +226,19 @@ public class Interpreter{
                         )
                 )
         );
-        PrgState crtPrgState6 = new PrgState(ex6, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
+        try {
+            ex6.typecheck(new MyDictionary<>());
+            PrgState crtPrgState6 = new PrgState(ex6, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
 //        List<PrgState> list9 = new ArrayList<>();
 //        list9.add(crtPrgState9);
-        MyIRepository repo6 = new Repository("src/log6.txt");
-        repo6.addState(crtPrgState6);
-        Controller ctrl6 = new Controller(repo6);
+            MyIRepository repo6 = new Repository("src/log6.txt");
+            repo6.addState(crtPrgState6);
+            Controller ctrl6 = new Controller(repo6);
+            menu.addCommand(new RunExample("6", ex6.toString(), ctrl6));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
         IStatement ex7= new CompStatement(new VarDeclStatement("v", new IntType()),
                 new CompStatement(new VarDeclStatement("a", new RefType(new IntType())),
@@ -212,22 +264,24 @@ public class Interpreter{
                         )
                 )
         );
-        PrgState crtPrgState7 = new PrgState(ex7, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
+        try {
+            ex7.typecheck(new MyDictionary<>());
+            PrgState crtPrgState7 = new PrgState(ex7, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
 //        List<PrgState> list9 = new ArrayList<>();
 //        list9.add(crtPrgState9);
-        MyIRepository repo7 = new Repository("src/log7.txt");
-        repo7.addState(crtPrgState7);
-        Controller ctrl7 = new Controller(repo7);
+            MyIRepository repo7 = new Repository("src/log7.txt");
+            repo7.addState(crtPrgState7);
+            Controller ctrl7 = new Controller(repo7);
+            menu.addCommand(new RunExample("7", ex7.toString(), ctrl7));
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
-        TextMenu menu = new TextMenu();
-        menu.addCommand(new ExitCommand("0", "exit"));
-        menu.addCommand(new RunExample("1", ex1.toString(),ctr1));
-        menu.addCommand(new RunExample("2", test.toString(), ctrfiletest));
-        menu.addCommand(new RunExample("3", ex3.toString(), ctrl3));
-        menu.addCommand(new RunExample("4", ex4.toString(), ctrl4));
-        menu.addCommand(new RunExample("5", ex5.toString(), ctrl5));
-        menu.addCommand(new RunExample("6", ex6.toString(), ctrl6));
-        menu.addCommand(new RunExample("7", ex7.toString(), ctrl7));
+//        menu.addCommand(new RunExample("4", ex4.toString(), ctrl4));
+//        menu.addCommand(new RunExample("5", ex5.toString(), ctrl5));
+//        menu.addCommand(new RunExample("6", ex6.toString(), ctrl6));
+//        menu.addCommand(new RunExample("7", ex7.toString(), ctrl7));
 
         menu.show();
     }

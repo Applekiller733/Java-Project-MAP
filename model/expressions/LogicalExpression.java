@@ -4,6 +4,7 @@ import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.expressions.LogicalOperation;
 import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 import model.value.IValue;
 
@@ -41,5 +42,21 @@ public class LogicalExpression implements IExpression {
 
     public IExpression deepCopy(){
         return new LogicalExpression(this.left.deepCopy(), this.operation, this.right.deepCopy());
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws ExpressionException {
+        IType type1, type2;
+        type1 = left.typecheck(typeEnv);
+        type2 = right.typecheck(typeEnv);
+        if (type1.equals(new BoolType())){
+            if (type2.equals(new BoolType())){
+                return new BoolType();
+            }
+            else
+                throw new ExpressionException("LOGICALEXP:Second operand is not boolean!\n");
+        }
+        else
+            throw new ExpressionException("LOGICALEXP:First operand is not boolean!\n");
     }
 }

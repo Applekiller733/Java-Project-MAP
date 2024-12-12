@@ -1,8 +1,10 @@
 package model.expressions;
 
+import exceptions.ExpressionException;
 import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
 import model.state.PrgState;
+import model.type.IType;
 import model.value.IValue;
 
 public class ValueExpression implements IExpression{
@@ -24,5 +26,10 @@ public class ValueExpression implements IExpression{
 
     public IExpression deepCopy(){
         return new ValueExpression(value);
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws ExpressionException {
+        return value.getType();
     }
 }

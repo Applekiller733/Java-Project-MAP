@@ -2,9 +2,11 @@ package model.statements;
 
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.expressions.IExpression;
 import model.state.PrgState;
 import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 import model.value.IValue;
 
@@ -40,5 +42,17 @@ public class IfStatement implements IStatement {
 
     public IStatement deepCopy(){
         return new IfStatement(expression.deepCopy(), thenStatement.deepCopy(), elseStatement.deepCopy());
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typeexp = expression.typecheck(typeEnv);
+        if (typeexp.equals(new BoolType())){
+            thenStatement.typecheck(typeEnv);
+            elseStatement.typecheck(typeEnv);
+            return typeEnv;
+        }
+        else
+            throw new StatementException("IFSTMT:The expression is not a bool type!\n");
     }
 }

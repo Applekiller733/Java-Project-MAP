@@ -1,6 +1,8 @@
 package model.statements;
 
+import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.state.PrgState;
 import model.type.IType;
 
@@ -29,5 +31,11 @@ public class VarDeclStatement implements IStatement{
 
     public IStatement deepCopy(){
         return new VarDeclStatement(varName, type);
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        typeEnv.put(varName, type);
+        return typeEnv;
     }
 }

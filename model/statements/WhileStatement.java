@@ -3,9 +3,11 @@ package model.statements;
 import exceptions.EmptyStackException;
 import exceptions.ExpressionException;
 import exceptions.StatementException;
+import model.ADT.MyIDictionary;
 import model.state.PrgState;
 import model.expressions.IExpression;
 import model.type.BoolType;
+import model.type.IType;
 import model.value.BoolValue;
 import model.value.IValue;
 
@@ -35,6 +37,17 @@ public class WhileStatement implements IStatement {
     @Override
     public IStatement deepCopy() {
         return new WhileStatement(this.exp.deepCopy(), this.body.deepCopy());
+    }
+
+    @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typeexp = exp.typecheck(typeEnv);
+        if (typeexp.equals(new BoolType())){
+            body.typecheck(typeEnv);
+            return typeEnv;
+        }
+        else
+            throw new StatementException("WHILESTMT:While statement expects a boolean value");
     }
 
     @Override

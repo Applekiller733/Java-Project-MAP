@@ -58,6 +58,21 @@ public class ReadFileStatement implements IStatement {
     }
 
     @Override
+    public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        IType typeexp = expression.typecheck(typeEnv);
+        IType typevar = typeEnv.get(this.var_name);
+        if (typevar.equals(new IntType())) {
+            if (typeexp.equals(new StringType())) {
+                return typeEnv;
+            }
+            else
+                throw new StatementException("READFILESTMT:The expression does not evaluate to a string type");
+        }
+        else
+            throw new StatementException("READFILESTMT:The variable '" + this.var_name + "' is not an int type!");
+    }
+
+    @Override
     public String toString() {
         return "read(" + expression.toString() + ")";
     }

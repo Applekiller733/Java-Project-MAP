@@ -3,6 +3,7 @@ package model.expressions;
 import exceptions.ExpressionException;
 import model.ADT.IHeap;
 import model.ADT.MyIDictionary;
+import model.type.IType;
 import model.type.IntType;
 import model.value.IValue;
 import model.value.IntValue;
@@ -85,5 +86,21 @@ public class ArithmeticExpression implements IExpression{
     @Override
     public IExpression deepCopy() {
         return new ArithmeticExpression(left.deepCopy(), operation, right.deepCopy());
+    }
+
+    @Override
+    public IType typecheck(MyIDictionary<String, IType> typeEnv) throws ExpressionException {
+        IType type1, type2;
+        type1 = left.typecheck(typeEnv);
+        type2 = right.typecheck(typeEnv);
+        if (type1.equals(new IntType())){
+            if(type2.equals(new IntType())){
+                return new IntType();
+            }
+            else
+                throw new ExpressionException("ARITHEXP:Second operand not int type!");
+        }
+        else
+            throw new ExpressionException("ARITHEXP:First operand not int type!");
     }
 }
