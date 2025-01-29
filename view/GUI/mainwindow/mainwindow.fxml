@@ -53,7 +53,7 @@
             <HBox>
                 <children>
                     <Button fx:id="OneStepButton" text="One Step" onAction="#OneStepButtonHandler"/>
-                    <Button fx:id="AllStepButton" text="All Steps" onAction="#AllStepButtonHandler" />
+<!--                    <Button fx:id="AllStepButton" text="All Steps" onAction="#AllStepButtonHandler" />-->
                 </children>
             </HBox>
         </children>

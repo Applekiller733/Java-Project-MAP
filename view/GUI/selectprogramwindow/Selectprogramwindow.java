@@ -193,6 +193,106 @@ public class Selectprogramwindow implements Initializable {
         );
 
        programsList.add(ex7);
+
+       //sleep example
+        IStatement ex8 = new CompStatement(new VarDeclStatement("v", new IntType()),
+                new CompStatement(new AssignStatement("v", new ValueExpression(new IntValue(10))),
+                        new CompStatement(new ForkStatement(new CompStatement(new AssignStatement("v",
+                                new ArithmeticExpression( new VariableExpression("v"), ArithmeticOperation.MINUS, new ValueExpression(new IntValue(1)))),
+                                new CompStatement(new AssignStatement("v", new ArithmeticExpression( new VariableExpression("v"), ArithmeticOperation.MINUS, new ValueExpression(new IntValue(1)))),
+                                        new PrintStatement(new VariableExpression("v"))))),
+                                new CompStatement(new SleepStatement(10), new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), ArithmeticOperation.PLUS, new ValueExpression(new IntValue(10))))))));
+
+        programsList.add(ex8);
+
+        //switch example
+        // switch example
+        IStatement ex9 = new CompStatement(new VarDeclStatement("a", new IntType()),
+                new CompStatement(new VarDeclStatement("b", new IntType()),
+                        new CompStatement(new VarDeclStatement("c", new IntType()),
+                                new CompStatement(new AssignStatement("a", new ValueExpression(new IntValue(1))),
+                                        new CompStatement(new AssignStatement("b", new ValueExpression(new IntValue(2))),
+                                                new CompStatement(new AssignStatement("c", new ValueExpression(new IntValue(5))),
+                                                        new CompStatement(new SwitchStatement(
+                                                                new ArithmeticExpression(new VariableExpression("a"), ArithmeticOperation.MULTIPLY, new ValueExpression(new IntValue(10))),
+                                                                new ArithmeticExpression(new VariableExpression("b"), ArithmeticOperation.MULTIPLY ,new VariableExpression("c")),
+                                                                new CompStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new VariableExpression("b"))),
+                                                                new ValueExpression(new IntValue(10)),
+                                                                new CompStatement(new PrintStatement(new ValueExpression(new IntValue(100))), new PrintStatement(new ValueExpression(new IntValue(200)))),
+                                                                new PrintStatement(new ValueExpression(new IntValue(300)))
+                                                        ), new PrintStatement(new ValueExpression(new IntValue(300))))))))));
+
+        programsList.add(ex9);
+
+        //for example
+        // for example
+        IStatement ex10 = new CompStatement(new VarDeclStatement("a", new RefType(new IntType())),
+                new CompStatement(new HeapAllocationStatement("a", new ValueExpression(new IntValue(20))),
+                        new CompStatement(new VarDeclStatement("v", new IntType()),
+                                new CompStatement(new ForStatement(new ForkStatement(
+                                        new CompStatement(new PrintStatement(new VariableExpression("v")),
+                                                new AssignStatement("v", new ArithmeticExpression(new VariableExpression("v"), ArithmeticOperation.MULTIPLY, new ReadHeapExpression(new VariableExpression("a")))))),
+                                        "v", new ValueExpression(new IntValue(0)), new ValueExpression(new IntValue(3)),
+                                        new ArithmeticExpression(new VariableExpression("v"), ArithmeticOperation.PLUS,new ValueExpression(new IntValue(1)))),
+                                        new PrintStatement(new ReadHeapExpression(new VariableExpression("a")))))));
+
+        programsList.add(ex10);
+
+        //wait example
+        // wait example
+        IStatement ex11 = new CompStatement(new VarDeclStatement("v", new IntType()),
+                new CompStatement(new AssignStatement("v", new ValueExpression(new IntValue(20))),
+                        new CompStatement(new PrintStatement(new VariableExpression("v")),
+                                new CompStatement(new WaitStatement(10),
+                                        new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), ArithmeticOperation.MULTIPLY,new ValueExpression(new IntValue(10))))))));
+
+        programsList.add(ex11);
+
+        //conditional assignment example
+        // cond ass example
+        IStatement ex12 = new CompStatement(
+                new VarDeclStatement("a", new RefType(new IntType())),
+                new CompStatement(
+                        new VarDeclStatement("b", new RefType(new IntType())),
+                        new CompStatement(
+                                new VarDeclStatement("v", new IntType()),
+                                new CompStatement(
+                                        new HeapAllocationStatement("a", new ValueExpression(new IntValue(0))),
+                                        new CompStatement(
+                                                new HeapAllocationStatement("b", new ValueExpression(new IntValue(0))),
+                                                new CompStatement(
+                                                        new WriteHeapStatement("a", new ValueExpression(new IntValue(1))),
+                                                        new CompStatement(
+                                                                new WriteHeapStatement("b", new ValueExpression(new IntValue(2))),
+                                                                new CompStatement(
+                                                                        new ConditionalAssignmentStatement(
+                                                                                "v",
+                                                                                new RelationalExpression( new ReadHeapExpression(new VariableExpression("a")), RelationalOperation.LOWER,new ReadHeapExpression(new VariableExpression("b"))),
+                                                                                new ValueExpression(new IntValue(100)),
+                                                                                new ValueExpression(new IntValue(200))
+                                                                        ),
+                                                                        new CompStatement(
+                                                                                new PrintStatement(new VariableExpression("v")),
+                                                                                new CompStatement(
+                                                                                        new ConditionalAssignmentStatement(
+                                                                                                "v",
+                                                                                                new RelationalExpression(new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("b")), ArithmeticOperation.MINUS,new ValueExpression(new IntValue(2))), RelationalOperation.LOWER, new ReadHeapExpression(new VariableExpression("a"))),
+                                                                                                new ValueExpression(new IntValue(100)),
+                                                                                                new ValueExpression(new IntValue(200))
+                                                                                        ),
+                                                                                        new PrintStatement(new VariableExpression("v"))
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        programsList.add(ex12);
     }
 
     @FXML

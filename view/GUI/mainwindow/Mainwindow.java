@@ -62,8 +62,8 @@ public class Mainwindow {
     @FXML
     private Button OneStepButton;
 
-    @FXML
-    private Button AllStepButton;
+//    @FXML
+//    private Button AllStepButton;
 
     private Controller controller;
 
@@ -253,15 +253,15 @@ public class Mainwindow {
         }
     }
 
-    public void AllStepButtonHandler(ActionEvent event){
-        try{
-            controller.allStep();
-            populateAll();
-        }
-        catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-    }
+//    public void AllStepButtonHandler(ActionEvent event){
+//        try{
+//            controller.allStep();
+//            populateAll();
+//        }
+//        catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//    }
 
 
 }
