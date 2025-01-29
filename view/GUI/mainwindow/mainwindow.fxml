@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.GUI.mainwindow.Mainwindow"
+            prefHeight="400.0" prefWidth="600.0">
+
+<children>
+    <VBox>
+        <children>
+            <HBox>
+                <children>
+                    <Label text="Number of program states:" />
+                    <TextField fx:id="NumOfPrgStates" />
+                </children>
+            </HBox>
+            <HBox>
+                <children>
+                    <Label text="Execution Stack" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="Symtable" prefWidth="300" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="Heaptable" prefWidth="300" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="Filetable" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="PrgStateIdentifiers List" prefWidth="100" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="Out List" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
+                </children>
+            </HBox>
+            <HBox>
+                <children>
+                    <ListView fx:id="ExecStackListView" prefWidth="200"/>
+                    <TableView fx:id="SymtableTableView" prefWidth="300">
+                        <columns>
+                            <TableColumn fx:id="SymNameColumn" text="VarName"/>
+                            <TableColumn fx:id="SymValueColumn" text="Value"/>
+                        </columns>
+                    </TableView>
+                    <TableView fx:id="HeapTableView" prefWidth="300">
+                        <columns>
+                            <TableColumn fx:id="HeapAddressColumn" text="Address"/>
+                            <TableColumn fx:id="HeapNameColumn" text="Value"/>
+                        </columns>
+                    </TableView>
+                    <ListView fx:id="FiletableListView" prefWidth="200"/>
+                    <ListView fx:id="PrgStatesListView" prefWidth="100"/>
+                    <ListView fx:id="OutListView" prefWidth="200"/>
+                </children>
+            </HBox>
+            <HBox>
+                <children>
+                    <Button fx:id="OneStepButton" text="One Step" onAction="#OneStepButtonHandler"/>
+                    <Button fx:id="AllStepButton" text="All Steps" onAction="#AllStepButtonHandler" />
+                </children>
+            </HBox>
+        </children>
+    </VBox>
+</children>
+</AnchorPane>

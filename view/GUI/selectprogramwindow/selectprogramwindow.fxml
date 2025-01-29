@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.GUI.selectprogramwindow.Selectprogramwindow"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <VBox>
+            <children>
+                <ListView fx:id="selectableProgramsList" minWidth="700"/>
+                <Button fx:id="selectProgramButton" text="Select Program" onAction="#onSelectProgramButtonPress">
+                    <font>
+                        <Font name="Times New Roman" size="13"/>
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

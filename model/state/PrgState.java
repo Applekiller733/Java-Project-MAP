@@ -33,6 +33,10 @@ public class PrgState {
         this.execStack.push(initState);
     }
 
+    public int getId() {
+        return id;
+    }
+
     public MyIStack<IStatement> getExecStack() {
         return execStack;
     }

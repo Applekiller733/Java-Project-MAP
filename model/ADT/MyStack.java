@@ -47,4 +47,9 @@ public class MyStack<T> implements MyIStack<T>{
 
         return "The stack contains:" + str.toString();
     }
+
+    @Override
+    public Stack<T> getStack() {
+        return this.stack;
+    }
 }

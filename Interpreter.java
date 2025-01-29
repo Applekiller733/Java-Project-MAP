@@ -133,6 +133,7 @@ public class Interpreter{
         catch (Exception e){
             System.out.println(e.getMessage());
         }
+
         IStatement ex4 = new CompStatement(
                 new VarDeclStatement("v", new RefType(new IntType())),
                 new CompStatement(
@@ -152,6 +153,7 @@ public class Interpreter{
                         )
                 )
         );
+
         try {
             ex4.typecheck(new MyDictionary<>());
 
@@ -187,6 +189,7 @@ public class Interpreter{
                         )
                 )
         );
+
         try {
             ex5.typecheck(new MyDictionary<>());
             PrgState crtPrgState5 = new PrgState(ex5, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());
@@ -264,6 +267,7 @@ public class Interpreter{
                         )
                 )
         );
+
         try {
             ex7.typecheck(new MyDictionary<>());
             PrgState crtPrgState7 = new PrgState(ex7, new MyStack<>(), new MyDictionary<>(), new MyList<>(), new MyDictionary<>(), new Heap());

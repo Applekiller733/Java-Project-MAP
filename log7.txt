@@ -1,4 +1,4 @@
-6 - thread id
+5 - thread id
 The stack contains:(int v;(Ref int a;(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))))
 
 Dictionary contains: 
@@ -8,7 +8,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(Ref int a;(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))
 int v
 
@@ -19,7 +19,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(Ref int a;(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))
 int v
 
@@ -30,7 +30,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(Ref int a;(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))
 
 Dictionary contains: v->0
@@ -41,7 +41,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(Ref int a;(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))))
 
 Dictionary contains: v->0
@@ -52,7 +52,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))
 Ref int a
 
@@ -64,7 +64,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))
 Ref int a
 
@@ -76,7 +76,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))
 
 Dictionary contains: a->Ref(0,int)
@@ -88,7 +88,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(v=10;(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))))
 
 Dictionary contains: a->Ref(0,int)
@@ -100,7 +100,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))
 v=10
 
@@ -113,7 +113,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))
 v=10
 
@@ -126,7 +126,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))
 
 Dictionary contains: a->Ref(0,int)
@@ -138,7 +138,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(new(a,22);(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a)))))
 
 Dictionary contains: a->Ref(0,int)
@@ -150,7 +150,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))
 new(a,22)
 
@@ -163,7 +163,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))
 new(a,22)
 
@@ -176,7 +176,7 @@ File Table:
 Heap:
 
 
-6 - thread id
+5 - thread id
 The stack contains:(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))
 
 Dictionary contains: a->Ref(1,int)
@@ -189,7 +189,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:(fork((wH(a);(v=32;(print(v);print(rH(a))))));(print(v);print(rH(a))))
 
 Dictionary contains: a->Ref(1,int)
@@ -202,7 +202,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:(print(v);print(rH(a)))
 fork((wH(a);(v=32;(print(v);print(rH(a))))))
 
@@ -216,7 +216,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:(print(v);print(rH(a)))
 fork((wH(a);(v=32;(print(v);print(rH(a))))))
 
@@ -230,7 +230,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:(print(v);print(rH(a)))
 
 Dictionary contains: a->Ref(1,int)
@@ -243,7 +243,7 @@ Heap:
 1-> 22
 
 
-7 - thread id
+6 - thread id
 The stack contains:(wH(a);(v=32;(print(v);print(rH(a)))))
 
 Dictionary contains: a->Ref(1,int)
@@ -256,7 +256,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:(print(v);print(rH(a)))
 
 Dictionary contains: a->Ref(1,int)
@@ -269,7 +269,7 @@ Heap:
 1-> 22
 
 
-7 - thread id
+6 - thread id
 The stack contains:(wH(a);(v=32;(print(v);print(rH(a)))))
 
 Dictionary contains: a->Ref(1,int)
@@ -282,7 +282,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:print(rH(a))
 print(v)
 
@@ -296,7 +296,7 @@ Heap:
 1-> 22
 
 
-7 - thread id
+6 - thread id
 The stack contains:(v=32;(print(v);print(rH(a))))
 wH(a)
 
@@ -310,7 +310,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:print(rH(a))
 print(v)
 
@@ -324,7 +324,7 @@ Heap:
 1-> 22
 
 
-7 - thread id
+6 - thread id
 The stack contains:(v=32;(print(v);print(rH(a))))
 wH(a)
 
@@ -338,7 +338,7 @@ Heap:
 1-> 22
 
 
-6 - thread id
+5 - thread id
 The stack contains:print(rH(a))
 
 Dictionary contains: a->Ref(1,int)
@@ -352,7 +352,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(v=32;(print(v);print(rH(a))))
 
 Dictionary contains: a->Ref(1,int)
@@ -366,7 +366,7 @@ Heap:
 1-> 30
 
 
-6 - thread id
+5 - thread id
 The stack contains:print(rH(a))
 
 Dictionary contains: a->Ref(1,int)
@@ -380,7 +380,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(v=32;(print(v);print(rH(a))))
 
 Dictionary contains: a->Ref(1,int)
@@ -394,7 +394,7 @@ Heap:
 1-> 30
 
 
-6 - thread id
+5 - thread id
 The stack contains:
 Dictionary contains: a->Ref(1,int)
 v->10
@@ -408,7 +408,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(print(v);print(rH(a)))
 v=32
 
@@ -424,7 +424,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(print(v);print(rH(a)))
 v=32
 
@@ -440,7 +440,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(print(v);print(rH(a)))
 
 Dictionary contains: a->Ref(1,int)
@@ -455,7 +455,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:(print(v);print(rH(a)))
 
 Dictionary contains: a->Ref(1,int)
@@ -470,7 +470,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:print(rH(a))
 print(v)
 
@@ -486,7 +486,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:print(rH(a))
 print(v)
 
@@ -502,7 +502,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:print(rH(a))
 
 Dictionary contains: a->Ref(1,int)
@@ -518,7 +518,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:print(rH(a))
 
 Dictionary contains: a->Ref(1,int)
@@ -534,7 +534,7 @@ Heap:
 1-> 30
 
 
-7 - thread id
+6 - thread id
 The stack contains:
 Dictionary contains: a->Ref(1,int)
 v->32

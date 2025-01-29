@@ -45,7 +45,7 @@ public class OpenFileStatement implements IStatement{
 
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
-        //todo implement
+
         IType typeexp = exp.typecheck(typeEnv);
         if (typeexp.equals(new StringType())){
             return typeEnv;

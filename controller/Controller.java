@@ -13,10 +13,7 @@ import repository.MyIRepository;
 import repository.Repository;
 
 import javax.naming.ldap.Control;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -29,6 +26,7 @@ public class Controller {
 
     public Controller(MyIRepository repository) {
         this.repository = repository;
+        this.executor = Executors.newFixedThreadPool(8);
     }
 
     public List<PrgState> removeCompletedPrg(List<PrgState> inPrgList){
@@ -38,7 +36,9 @@ public class Controller {
     }
 
     public void oneStepForAllPrg(List<PrgState> prgList) {
-        prgList.forEach(prgState -> {
+        List<PrgState> prgStates = this.removeCompletedPrg(prgList);
+
+        prgStates.forEach(prgState -> {
             try {
                 repository.logPrgStateExec(prgState);
             } catch (RepositoryException e) {
@@ -46,7 +46,7 @@ public class Controller {
             }
         });
 
-        List<Callable<PrgState>> callList = prgList.stream().map(p -> (Callable<PrgState>)() -> p.oneStep())
+        List<Callable<PrgState>> callList = prgStates.stream().map(p -> (Callable<PrgState>)() -> p.oneStep())
                 .collect(Collectors.toList());
         try {
             List<PrgState> newPrgList = executor.invokeAll(callList).stream()
@@ -58,16 +58,16 @@ public class Controller {
                         }
                     }).filter(p -> p != null).collect(Collectors.toList());
 
-            prgList.addAll(newPrgList);
+            prgStates.addAll(newPrgList);
 
-            prgList.forEach(prgState -> {
+            prgStates.forEach(prgState -> {
                 try {
                     repository.logPrgStateExec(prgState);
                 } catch (RepositoryException e) {
                     throw new RuntimeException(e);
                 }
             });
-            repository.setPrgList(prgList);
+            repository.setPrgList(prgStates);
         }
         catch (InterruptedException e) {
             throw new RuntimeException(e);
@@ -126,6 +126,10 @@ public class Controller {
                             return addresses.stream();
                         }
                 ).collect(Collectors.toList());
+    }
+
+    public List<PrgState> getCurrentProgramStates() throws RepositoryException {
+        return repository.getPrgStates();
     }
 
     public void addState(PrgState state){

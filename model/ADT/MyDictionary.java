@@ -55,6 +55,11 @@ public class MyDictionary<K, V> implements MyIDictionary<K, V> {
     }
 
     @Override
+    public Map<K, V> getAll() throws ExpressionException {
+        return this.map;
+    }
+
+    @Override
     public Set<K> getKeys() {
         return this.map.keySet();
     }
