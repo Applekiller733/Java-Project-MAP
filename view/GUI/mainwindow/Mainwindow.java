@@ -51,6 +51,15 @@ public class Mainwindow {
     private TableColumn<Pair<Integer, IValue>, String> HeapNameColumn;
 
     @FXML
+    private TableView<Pair<Integer, Integer>> LatchTableView;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, Integer> LatchLocationColumn;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> LatchValueColumn;
+
+    @FXML
     private ListView<String> FiletableListView;
 
     @FXML
@@ -105,6 +114,7 @@ public class Mainwindow {
         populateExecStack();
         populateSymTable();
         populateHeapTable();
+        populateLatchTableView();
         populateFileTableListView();
         populatePrgStatesTable();
         populateOutListView();
@@ -185,6 +195,31 @@ public class Mainwindow {
         }
     }
 
+    public void populateLatchTableView(){
+        try{
+            if (controller.getCurrentProgramStates().isEmpty()){
+                System.out.println("No program states available");
+                LatchTableView.getItems().clear();
+                return;
+            }
+            if (controller.getCurrentProgramStates().get(0).getLatchTable().getContent() != null) {
+                ObservableList<Pair<Integer, Integer>> latchTableData = FXCollections.observableArrayList(
+                        controller.getCurrentProgramStates().get(0)
+                                .getLatchTable().getContent().entrySet().stream()
+                                .map(pair -> new Pair<>(pair.getKey(), pair.getValue()))
+                                .toList()
+                );
+                LatchLocationColumn.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getKey()));
+                LatchValueColumn.setCellValueFactory(data -> new SimpleObjectProperty<>(data.getValue().getValue().toString()));
+                LatchTableView.setItems(latchTableData);
+                LatchTableView.refresh();
+            }
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
     public void populateFileTableListView(){
         try{
 
@@ -237,7 +272,8 @@ public class Mainwindow {
     public void OneStepButtonHandler(ActionEvent event) {
         try {
             if (controller.getCurrentProgramStates().isEmpty()){
-                System.out.println("No program states available");
+                Alert alert = new Alert(Alert.AlertType.WARNING, "Program has finished execution!", ButtonType.OK);
+                alert.showAndWait();
                 return;
             }
 

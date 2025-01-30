@@ -25,6 +25,7 @@
                     <Label text="Execution Stack" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
                     <Label text="Symtable" prefWidth="300" alignment="CENTER" textAlignment="CENTER"/>
                     <Label text="Heaptable" prefWidth="300" alignment="CENTER" textAlignment="CENTER"/>
+                    <Label text="Latchtable" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
                     <Label text="Filetable" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
                     <Label text="PrgStateIdentifiers List" prefWidth="100" alignment="CENTER" textAlignment="CENTER"/>
                     <Label text="Out List" prefWidth="200" alignment="CENTER" textAlignment="CENTER"/>
@@ -43,6 +44,12 @@
                         <columns>
                             <TableColumn fx:id="HeapAddressColumn" text="Address"/>
                             <TableColumn fx:id="HeapNameColumn" text="Value"/>
+                        </columns>
+                    </TableView>
+                    <TableView fx:id="LatchTableView" prefWidth="200">
+                        <columns>
+                            <TableColumn fx:id="LatchLocationColumn" text="Location"/>
+                            <TableColumn fx:id="LatchValueColumn" text="Value"/>
                         </columns>
                     </TableView>
                     <ListView fx:id="FiletableListView" prefWidth="200"/>

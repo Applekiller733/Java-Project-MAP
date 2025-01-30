@@ -58,6 +58,6 @@ public class WriteHeapStatement implements IStatement {
 
     @Override
     public String toString(){
-        return "wH(" + varname + ")";
+        return "wH(" + varname + "," + expression + ")";
     }
 }

@@ -1,0 +1,734 @@
+7 - thread id
+The stack contains:(Ref int a;(Ref int b;(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))))))
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(Ref int b;(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))))
+Ref int a
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(Ref int b;(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))))
+Ref int a
+
+Dictionary contains: 
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(Ref int b;(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))))
+
+Dictionary contains: a->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(Ref int b;(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))))
+
+Dictionary contains: a->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))))
+Ref int b
+
+Dictionary contains: a->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))))
+Ref int b
+
+Dictionary contains: a->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))))
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(int v;(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))))
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))
+int v
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))
+int v
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(a,0);(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))))
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))
+new(a,0)
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))
+new(a,0)
+
+Dictionary contains: a->Ref(0,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+
+
+7 - thread id
+The stack contains:(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+
+
+7 - thread id
+The stack contains:(new(b,0);(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+
+
+7 - thread id
+The stack contains:(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))
+new(b,0)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+
+
+7 - thread id
+The stack contains:(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))
+new(b,0)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(0,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+
+
+7 - thread id
+The stack contains:(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+2-> 0
+
+
+7 - thread id
+The stack contains:(wH(a);(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+2-> 0
+
+
+7 - thread id
+The stack contains:(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))
+wH(a)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+2-> 0
+
+
+7 - thread id
+The stack contains:(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))
+wH(a)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 0
+2-> 0
+
+
+7 - thread id
+The stack contains:(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 0
+
+
+7 - thread id
+The stack contains:(wH(b);(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 0
+
+
+7 - thread id
+The stack contains:(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))
+wH(b)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 0
+
+
+7 - thread id
+The stack contains:(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))
+wH(b)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 0
+
+
+7 - thread id
+The stack contains:(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(v=, (rH(a) LOWER rH(b))? 100: 200;(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+v=, (rH(a) LOWER rH(b))? 100: 200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+v=, (rH(a) LOWER rH(b))? 100: 200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+IF(rH(a) LOWER rH(b)) THEN{v=100} ELSE{v=200}
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+IF(rH(a) LOWER rH(b)) THEN{v=100} ELSE{v=200}
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+v=100
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+v=100
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->0
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(print(v);(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v)))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))
+print(v)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))
+print(v)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:(v=, (rH(b) - 2 GREATER rH(a))? 100: 200;print(v))
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+v=, (rH(b) - 2 GREATER rH(a))? 100: 200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+v=, (rH(b) - 2 GREATER rH(a))? 100: 200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+IF(rH(b) - 2 GREATER rH(a)) THEN{v=100} ELSE{v=200}
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+IF(rH(b) - 2 GREATER rH(a)) THEN{v=100} ELSE{v=200}
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+v=200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+v=200
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->100
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->200
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:print(v)
+
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->200
+
+The list contains: 100
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+
+7 - thread id
+The stack contains:
+Dictionary contains: a->Ref(1,int)
+b->Ref(2,int)
+v->200
+
+The list contains: 100
+200
+
+File Table:
+
+Heap:
+1-> 1
+2-> 2
+
+

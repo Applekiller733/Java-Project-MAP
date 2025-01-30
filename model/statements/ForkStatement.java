@@ -30,7 +30,9 @@ public class ForkStatement implements IStatement{
 
         IHeap newHeap = state.getHeap();
 
-        PrgState newthread = new PrgState(statement, newExecStack, newSymTable, newOutput, newFileTable, newHeap);
+        MyILatchTable newLatchTable = state.getLatchTable();
+
+        PrgState newthread = new PrgState(statement, newExecStack, newSymTable, newOutput, newFileTable, newHeap, newLatchTable);
         return newthread;
     }
 

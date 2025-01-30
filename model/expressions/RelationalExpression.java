@@ -67,7 +67,7 @@ public class RelationalExpression implements IExpression {
         type2 = this.right.typecheck(typeEnv);
         if (type1.equals(new IntType())){
             if(type2.equals(new IntType())){
-                return new IntType();
+                return new BoolType();
             }
             else
                 throw new ExpressionException("RELATIONEXP:Second operand not int type!");

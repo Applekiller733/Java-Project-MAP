@@ -193,7 +193,7 @@ public class Selectprogramwindow implements Initializable {
         );
 
        programsList.add(ex7);
-
+/*
        //sleep example
         IStatement ex8 = new CompStatement(new VarDeclStatement("v", new IntType()),
                 new CompStatement(new AssignStatement("v", new ValueExpression(new IntValue(10))),
@@ -247,7 +247,7 @@ public class Selectprogramwindow implements Initializable {
                                         new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), ArithmeticOperation.MULTIPLY,new ValueExpression(new IntValue(10))))))));
 
         programsList.add(ex11);
-
+*/
         //conditional assignment example
         // cond ass example
         IStatement ex12 = new CompStatement(
@@ -267,7 +267,7 @@ public class Selectprogramwindow implements Initializable {
                                                                 new CompStatement(
                                                                         new ConditionalAssignmentStatement(
                                                                                 "v",
-                                                                                new RelationalExpression( new ReadHeapExpression(new VariableExpression("a")), RelationalOperation.LOWER,new ReadHeapExpression(new VariableExpression("b"))),
+                                                                                new RelationalExpression( new ReadHeapExpression(new VariableExpression("a")), RelationalOperation.LOWER, new ReadHeapExpression(new VariableExpression("b"))),
                                                                                 new ValueExpression(new IntValue(100)),
                                                                                 new ValueExpression(new IntValue(200))
                                                                         ),
@@ -276,7 +276,7 @@ public class Selectprogramwindow implements Initializable {
                                                                                 new CompStatement(
                                                                                         new ConditionalAssignmentStatement(
                                                                                                 "v",
-                                                                                                new RelationalExpression(new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("b")), ArithmeticOperation.MINUS,new ValueExpression(new IntValue(2))), RelationalOperation.LOWER, new ReadHeapExpression(new VariableExpression("a"))),
+                                                                                                new RelationalExpression(new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("b")), ArithmeticOperation.MINUS,new ValueExpression(new IntValue(2))), RelationalOperation.GREATER, new ReadHeapExpression(new VariableExpression("a"))),
                                                                                                 new ValueExpression(new IntValue(100)),
                                                                                                 new ValueExpression(new IntValue(200))
                                                                                         ),
@@ -293,6 +293,54 @@ public class Selectprogramwindow implements Initializable {
         );
 
         programsList.add(ex12);
+
+
+        IStatement ex13 = new CompStatement(new VarDeclStatement("v1", new RefType(new IntType())),
+                new CompStatement(new VarDeclStatement("v2", new RefType(new IntType())),
+                        new CompStatement(new VarDeclStatement("v3", new RefType(new IntType())),
+                                new CompStatement(new VarDeclStatement("cnt", new IntType()),
+                                        new CompStatement(new HeapAllocationStatement("v1", new ValueExpression(new IntValue(2))),
+                                                new CompStatement(new HeapAllocationStatement("v2", new ValueExpression(new IntValue(3))),
+                                                        new CompStatement(new HeapAllocationStatement("v3", new ValueExpression(new IntValue(4))),
+                                                                new CompStatement(new NewLatchStatement("cnt", new ReadHeapExpression(new VariableExpression("v2"))),
+                                                                        new CompStatement(new ForkStatement(new CompStatement(new WriteHeapStatement("v1", new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("v1")), ArithmeticOperation.MULTIPLY ,new ValueExpression(new IntValue(10)))),
+                                                                                new CompStatement(new PrintStatement(new ReadHeapExpression(new VariableExpression("v1"))),
+                                                                                        new CompStatement(new CountDownStatement("cnt"),
+                                                                                                new ForkStatement(new CompStatement(new WriteHeapStatement("v2", new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("v2")), ArithmeticOperation.MULTIPLY,new ValueExpression(new IntValue(10)))),
+                                                                                                        new CompStatement(new PrintStatement(new ReadHeapExpression(new VariableExpression("v2"))),
+                                                                                                                new CompStatement(new CountDownStatement("cnt"),
+                                                                                                                        new ForkStatement(new CompStatement(new WriteHeapStatement("v3", new ArithmeticExpression(new ReadHeapExpression(new VariableExpression("v3")), ArithmeticOperation.MULTIPLY,new ValueExpression(new IntValue(10)))),
+                                                                                                                                new CompStatement(new PrintStatement(new ReadHeapExpression(new VariableExpression("v3"))),
+                                                                                                                                        new CountDownStatement("cnt")
+                                                                                                                                )
+                                                                                                                        )
+                                                                                                                        )
+                                                                                                                )
+                                                                                                        )
+                                                                                                )
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                        ),
+                                                                                new CompStatement(new AwaitStatement("cnt"),
+                                                                                        new CompStatement(new PrintStatement(new ValueExpression(new IntValue(100))),
+                                                                                                new CompStatement(new CountDownStatement("cnt"),
+                                                                                                        new PrintStatement(new ValueExpression(new IntValue(100)))
+                                                                                                )
+                                                                                        )
+                                                                                )
+                                                                        )
+                                                                )
+                                                        )
+                                                )
+                                        )
+                                )
+                        )
+                )
+        );
+
+        programsList.add(ex13);
     }
 
     @FXML
@@ -317,7 +365,7 @@ public class Selectprogramwindow implements Initializable {
                 return;
             }
             PrgState programstate = new PrgState(selectedProgram, new MyStack<>(), new MyDictionary<>(),
-                    new MyList<>(), new MyDictionary<>(), new Heap());
+                    new MyList<>(), new MyDictionary<>(), new Heap(), new MyLatchTable());
             MyIRepository repository = new Repository("log" + selectedIndex +".txt");
             repository.addState(programstate);
             Controller controller = new Controller(repository);

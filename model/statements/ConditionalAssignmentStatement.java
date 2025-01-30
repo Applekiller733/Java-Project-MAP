@@ -39,6 +39,7 @@ public class ConditionalAssignmentStatement implements IStatement{
 
     @Override
     public MyIDictionary<String, IType> typecheck(MyIDictionary<String, IType> typeEnv) throws StatementException, ExpressionException {
+        System.out.println(exp1.toString());
         IType typevarname = new VariableExpression(varname).typecheck(typeEnv);
         IType type1 = exp1.typecheck(typeEnv);
         IType type2 = exp2.typecheck(typeEnv);
@@ -53,8 +54,8 @@ public class ConditionalAssignmentStatement implements IStatement{
 
     @Override
     public String toString(){
-        return "ConditionalAssignment{"+
-                "varname=" + varname.toString() + "\n" +
-                ", exp1=" + exp1 + ", exp2=" + exp2 + ", exp3=" + exp3 + "}";
+        return
+                "v=" +
+                ", (" + exp1 + ")? " + exp2 + ": " + exp3;
     }
 }

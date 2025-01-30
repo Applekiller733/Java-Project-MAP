@@ -16,12 +16,13 @@ public class PrgState {
     private IStatement originalStatement;
     private MyIDictionary<StringValue, BufferedReader> fileTable;
     private IHeap heap;
+    private MyILatchTable latchTable;
     static int nextId = 0;
     private int id;
 
     public PrgState(IStatement initState, MyIStack<IStatement> execStack, MyIDictionary<String,
             IValue> symTable, MyIList<IValue> outputList,
-                    MyIDictionary<StringValue, BufferedReader> fileTable,IHeap heap) {
+                    MyIDictionary<StringValue, BufferedReader> fileTable,IHeap heap, MyILatchTable latchtable) {
         this.execStack = execStack;
         this.symTable = symTable;
         this.outputList = outputList;
@@ -29,6 +30,7 @@ public class PrgState {
         this.fileTable = fileTable;
         this.heap = heap;
         this.id = this.getNextId();
+        this.latchTable = latchtable;
 
         this.execStack.push(initState);
     }
@@ -56,6 +58,8 @@ public class PrgState {
     public IHeap getHeap(){
         return heap;
     }
+
+    public MyILatchTable getLatchTable() {return latchTable;}
 
     public Boolean isNotCompleted(){
         return (!this.getExecStack().isEmpty());
